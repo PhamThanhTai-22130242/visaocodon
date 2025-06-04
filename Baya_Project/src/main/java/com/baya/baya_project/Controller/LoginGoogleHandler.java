@@ -25,6 +25,7 @@ public class LoginGoogleHandler extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
+
         GoogleDTO googleDTO = new GoogleDTO();
         String tokens = googleDTO.getToken(code);
         System.out.println(tokens);
@@ -39,10 +40,8 @@ public class LoginGoogleHandler extends HttpServlet {
         UserDAO dao = new UserDAO();
         String url = null;
         if (dao.checkEmail(acc.getEmail())) {
-
-            
-
             User user = dao.findUserByEmail(acc.getEmail());
+
             if (dao.checkStatus(acc.getEmail()) == 1) {
                 log.infor(user.getUserID(), "Đăng nhập bằng Facebook", "Nhận tokens", "Đăng nhập thành công");
                 session.setAttribute("user", user);

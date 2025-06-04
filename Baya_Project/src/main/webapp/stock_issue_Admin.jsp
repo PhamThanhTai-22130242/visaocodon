@@ -207,7 +207,7 @@
                 "Content-Type": "application/json"
             }
         })
-            .then(res => {
+            .then(response => {
                 if (!response.ok) {
                     // Tự ném lỗi để chuyển xuống .catch
                     if (response.status === 401) {
@@ -225,7 +225,7 @@
                 let issue = data.data;
                 $('#title').text('Chi tiết phiếu kho ' + issue.id);
                 $('#receipt-id').text(issue.id);
-                $('#receipt-type').text(issue.issue_type);
+                // $('#receipt-type').text(issue.issue_type);
                 $('#receipt-date').text(issue.issue_date || 'N/A');
                 $('#receipt-note').text(issue.note);
 
@@ -237,6 +237,8 @@
                         '<td>' + item.productID + '</td>' +
                         '<td>' + item.quantity + '</td>' +
                         '<td>' + item.unit_price.toLocaleString() + 'đ</td>' +
+                        '<td>' + issue.issue_type+ '</td>' +
+
                         '</tr>';
                     tbody.append(row);
                 });

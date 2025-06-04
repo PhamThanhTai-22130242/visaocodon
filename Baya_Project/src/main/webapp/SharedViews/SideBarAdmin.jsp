@@ -69,6 +69,17 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                <i class="icon-columns menu-icon"></i>
+                <span class="menu-title">Quản lí người dùng</span>
+                <i class="menu-arrow"></i>
+            </a>
+
+        </li>
+
+
+
         <li class="sidebar-item">
             <a href="/admin/inventories/view/stock-receipt-admin" class="sidebar-link d-flex gap-3">
                 <i class="fa-solid fa-file-import"></i>
@@ -111,7 +122,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a href="/admin/comments/view" class="sidebar-link d-flex gap-3">
+            <a href="/admin/comments/view/comments" class="sidebar-link d-flex gap-3">
                 <i class="fa-solid fa-comments"></i>
                 <div>Quản lí bình luận</div>
             </a>

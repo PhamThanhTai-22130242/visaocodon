@@ -27,9 +27,9 @@ public class ReplyContactServlet extends HttpServlet {
         contact.setStatus("replied");
         contact.setReplyTime(new java.sql.Timestamp(System.currentTimeMillis()));
 
-//        JavaMail mailSender = new JavaMail();
-//
-//        mailSender.sendEmail(email, "Phản hồi từ BAYA", replyMessage);
+        JavaMail mailSender = new JavaMail();
+
+        mailSender.sendEmail(email, "Phản hồi từ BAYA", replyMessage);
 
         ContactDao contactDao = new ContactDao();
         int result = contactDao.update(contact);

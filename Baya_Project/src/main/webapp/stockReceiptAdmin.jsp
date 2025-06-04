@@ -1,13 +1,6 @@
 <%@ page import="com.baya.baya_project.Model.UserPrincipal" %><%--
   Created by IntelliJ IDEA.
   User: ASUS
-  Date: 05/02/25
-  Time: 9:19 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%--
-  Created by IntelliJ IDEA.
-  User: ASUS
   Date: 04/10/25
   Time: 2:36 PM
   To change this template use File | Settings | File Templates.
@@ -24,7 +17,6 @@
     <script rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js"></script>
     <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/assets/css/layout/styleAdmin.css">
     <link rel="stylesheet" href="/assets/css/pages/stockReceiptAdmin.css">
     <link href="https://cdn.datatables.net/2.2.1/css/dataTables.bootstrap5.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -32,8 +24,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/layout/styleAdmin.css">
 
-    <title>Xuất kho</title>
+    <title>Báo cáo kho</title>
 
 </head>
 <body>
@@ -43,18 +36,18 @@
 
 
     <div class="container">
-        <h2 id="titleReport"> Báo cáo</h2>
+        <h2> Báo cáo</h2>
 
-
+        <% UserPrincipal user = (UserPrincipal) request.getSession().getAttribute("user");
+            if(user.hasPermission("inventories","create")){
+        %>
         <div class="toolbar">
-            <% UserPrincipal user = (UserPrincipal) request.getSession().getAttribute("user");
-                if(user.hasPermission("dispatches","create")){
-            %>
             <button type="button"
-                    data-bs-toggle="modal" data-bs-target="#xuatKhoModal">📥 Xuất kho
-            </button>
-            <% } %>
+                    data-bs-toggle="modal" data-bs-target="#nhapKhoModal">📥 Nhập kho</button>
         </div>
+        <%
+            }
+        %>
 
         <div class="filters" action="report" method="get">
 
@@ -66,7 +59,7 @@
 
         </div>
 
-        <table id="issue_table">
+        <table id="receipt_table">
             <thead>
             <tr>
                 <th style="width: 10%;">Mã phiếu</th>
@@ -85,25 +78,25 @@
         <div class="d-flex justify-content-start mt-5 gap-2">
 
             <%
-                if(user.hasPermission("dispatches","exportPDF")){
+                if(user.hasPermission("inventories","exportPDF")){
             %>
             <button class="btn btn-danger btn-print-pdf">
                 <i class="fa-solid fa-file-pdf"></i> PDF
             </button>
 
+            <%}%>
+
             <%
-                }
-            %>
-            <%
-                if(user.hasPermission("dispatches","exportExel")){
+                if(user.hasPermission("inventories","exportExel")){
             %>
             <button class="btn btn-success btn-export-excel">
                 <i class="fa-solid fa-file-excel"></i> Excel
             </button>
 
-            <%
-                }
-            %>
+            <%}%>
+
+
+
         </div>
     </div>
 
@@ -115,31 +108,32 @@
 
 </div>
 
-<div class="modal fade" id="xuatKhoModal" tabindex="-1" role="dialog" aria-labelledby="xuatKhoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="nhapKhoModal" tabindex="-1" roles="dialog" aria-labelledby="nhapKhoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" roles="document">
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title" id="xuatKhoModalLabel">Phiếu Xuất kho</h5>
+                <h5 class="modal-title" id="nhapKhoModalLabel">Phiếu nhập kho</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Đóng">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
             <div class="modal-body">
-                <jsp:include page="import_issue_detail_admin.jsp" />
+                <jsp:include page="formImportProductAdmin.jsp" />
             </div>
 
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="xuatKhoChiTietModal" tabindex="-1" role="dialog" aria-labelledby="xuatKhoChiTietModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+
+<div class="modal fade" id="nhapKhoChiTietModal" tabindex="-1" roles="dialog" aria-labelledby="nhapKhoChiTietModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" roles="document">
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title" id="xuatKhoChitietModalLabel">Phiếu xuất kho</h5>
+                <h5 class="modal-title" id="nhapKhoChitietModalLabel">Phiếu nhập kho</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Đóng">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -153,35 +147,27 @@
         </div>
     </div>
 </div>
-
-
-
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/2.2.1/js/dataTables.js"></script>
 <script src="https://cdn.datatables.net/2.2.1/js/dataTables.bootstrap5.js"></script>
 
-
-
 <script>
-
     let table;
     let fisrt = true;
 
     $(document).ready(function () {
-
-
-        table = $('#issue_table').DataTable({
-            "ajax": "/load-issue-stock?action=all",
+        table = $('#receipt_table').DataTable({
+            "ajax": "/load-receipt-stock?action=all",
             "columns": [
-                {"data": "id"},
-                {"data": "issue_type"},
-                {"data": "issue_date"},
-                {"data": "note"},
+                { "data": "id" },
+                { "data": "receipt_type" },
+                { "data": "receipt_date" },
+                { "data": "note" },
                 {
                     "data": null,
                     "render": function (data, type, row, meta) {
-                        return '<button class="btn btn-primary btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#xuatKhoChiTietModal" data-id="' + row.id + '">\
+                        return '<button class="btn btn-primary btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#nhapKhoChiTietModal" data-id="' + row.id + '">\
                             <i class="fas fa-eye"></i> Xem\
                         </button>';
                     }
@@ -189,25 +175,24 @@
             ]
         });
 
-        $('#issue_table tbody').on('click', '.view-btn', function () {
+        $('#receipt_table tbody').on('click', '.view-btn', function () {
             const id = $(this).data('id');
-            loadIssue(id);
+            loadReceipt(id);
         });
 
+        $('#min-date, #max-date').on('change keyup', function () {
+            table.draw();
+        });
+    });
 
-
-    })
-
-
-
-    function loadIssue(id) {
-        fetch("/load-issue-stock?action=detail&id=" + id, {
+    function loadReceipt(id) {
+        fetch("/load-receipt-stock?action=detail&id=" + id, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
             }
         })
-            .then(res => {
+            .then(response => {
                 if (!response.ok) {
                     // Tự ném lỗi để chuyển xuống .catch
                     if (response.status === 401) {
@@ -221,28 +206,29 @@
                 return response.json();
             })
             .then(data => {
+                let receipt = data.data;
 
-                let issue = data.data;
-                $('#title').text('Chi tiết phiếu kho ' + issue.id);
-                $('#receipt-id').text(issue.id);
-                $('#receipt-type').text(issue.issue_type);
-                $('#receipt-date').text(issue.issue_date || 'N/A');
-                $('#receipt-note').text(issue.note);
+                $('#title').text('Chi tiết phiếu kho ' + receipt.id);
+                $('#receipt-id').text(receipt.id);
+                // $('#receipt-type').text(receipt.receipt_type);
+                $('#receipt-date').text(receipt.receipt_date || 'N/A');
+                $('#receipt-note').text(receipt.note);
 
                 let tbody = $('#receipt-detail-body');
                 tbody.empty();
 
-                issue.items.forEach(item => {
+                receipt.items.forEach(item => {
                     let row = '<tr>' +
-                        '<td>' + item.productID + '</td>' +
+                        '<td>' + item.name + '</td>' +
                         '<td>' + item.quantity + '</td>' +
                         '<td>' + item.unit_price.toLocaleString() + 'đ</td>' +
+                        '<td>' + item.receipt_type + '</td>' +
+
                         '</tr>';
                     tbody.append(row);
                 });
             });
     }
-
 
     $.fn.dataTable.ext.search.push(
         function (settings, data, dataIndex) {
@@ -264,14 +250,10 @@
             return false;
         }
     );
-
-    $('#min-date, #max-date').on('change keyup', function () {
-        table.draw();
-    });
 </script>
 <script>
     $(document).ready(function () {
-        let dataTable = $('#issue_table').DataTable();
+        let dataTable = $('#receipt_table').DataTable();
 
         function waitForImagesToLoad(container, callback) {
             const images = container.querySelectorAll('img');
@@ -297,7 +279,7 @@
         }
 
         function centerTableContent() {
-            $('#issue_table th, #issue_table td').css({
+            $('#receipt_table th, #receipt_table td').css({
                 'text-align': 'center',
                 'vertical-align': 'middle',
                 'font-family': 'Arial, sans-serif'
@@ -310,13 +292,12 @@
             let originalLength = dataTable.page.len();
             let originalPage = dataTable.page();
 
-
             dataTable.column(4).visible(false);
 
             dataTable.page.len(-1).draw();
 
             setTimeout(() => {
-                let tableElement = document.querySelector("#issue_table");
+                let tableElement = document.querySelector("#receipt_table");
 
                 waitForImagesToLoad(tableElement, () => {
                     html2canvas(tableElement, { scale: 2 }).then(canvas => {
@@ -327,7 +308,7 @@
                         let pageHeight = pdf.internal.pageSize.getHeight();
                         let margin = 4;
 
-                        const title = "Danh Sách Phiếu Xuất Nhập Kho";
+                        const title = "Danh Sách Phiếu Xuất Kho";
                         pdf.setFontSize(18);
                         pdf.setTextColor(40);
                         pdf.text(title, pageWidth / 2, margin + 5, { align: 'center' });
@@ -368,6 +349,7 @@
 
                         pdf.save("DanhSachPhieuXuatKho.pdf");
 
+                        // Khôi phục cột "Chức năng" và trạng thái phân trang ban đầu
                         dataTable.column(4).visible(true);
                         dataTable.page.len(originalLength).draw();
                         dataTable.page(originalPage).draw('page');
@@ -383,30 +365,26 @@
             dataTable.page.len(-1).draw();
 
             setTimeout(async () => {
-                const table = document.getElementById('issue_table');
+                const table = document.getElementById('receipt_table');
 
                 const workbook = new ExcelJS.Workbook();
-                const sheet = workbook.addWorksheet("DanhSachXuatKho");
+                const sheet = workbook.addWorksheet("DanhSachNhapKho");
 
                 const colCount = table.rows[0].cells.length;
 
-                const exportColIndexes = [];
-                for (let i = 0; i < colCount; i++) {
-                    if (i !== 4) { // Bỏ cột "Chức năng"
-                        exportColIndexes.push(i);
-                    }
-                }
+                // 👉 Bỏ cột cuối cùng (Chức năng)
+                const exportColCount = colCount - 1;
 
-                sheet.mergeCells(1, 1, 1, exportColIndexes.length);
+                sheet.mergeCells(1, 1, 1, exportColCount);
                 const titleCell = sheet.getCell('A1');
-                titleCell.value = "Danh Sách Xuất Kho";
+                titleCell.value = "Danh Sách Nhập Kho";
                 titleCell.alignment = { vertical: 'middle', horizontal: 'center' };
                 titleCell.font = { bold: true, size: 16 };
 
                 let headerRow = [];
-                exportColIndexes.forEach(i => {
+                for (let i = 0; i < exportColCount; i++) {
                     headerRow.push(table.tHead.rows[0].cells[i].innerText.trim());
-                });
+                }
                 const header = sheet.addRow(headerRow);
 
                 const borderStyle = {
@@ -430,9 +408,9 @@
                 for (let i = 0; i < table.tBodies[0].rows.length; i++) {
                     const row = table.tBodies[0].rows[i];
                     let rowData = [];
-                    exportColIndexes.forEach(j => {
+                    for (let j = 0; j < exportColCount; j++) {
                         rowData.push(row.cells[j].innerText.trim());
-                    });
+                    }
                     let excelRow = sheet.addRow(rowData);
                     excelRow.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
                     excelRow.eachCell(cell => {
@@ -440,12 +418,12 @@
                     });
                 }
 
-                exportColIndexes.forEach((_, index) => {
-                    sheet.getColumn(index + 1).width = 20;
-                });
+                for (let i = 1; i <= exportColCount; i++) {
+                    sheet.getColumn(i).width = 20;
+                }
 
                 const buffer = await workbook.xlsx.writeBuffer();
-                saveAs(new Blob([buffer]), "DanhSachXuatKho.xlsx");
+                saveAs(new Blob([buffer]), "DanhSachNhapKho.xlsx");
 
                 dataTable.page.len(originalLength).draw();
                 dataTable.page(originalPage).draw('page');
@@ -453,6 +431,7 @@
         });
     });
 </script>
+
 </body>
 </html>
 

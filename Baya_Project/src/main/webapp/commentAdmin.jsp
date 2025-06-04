@@ -190,7 +190,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                <form action="${pageContext.request.contextPath}/comments" method="post" style="display:inline;">
+                <form action="/admin/comments/view/comments" method="post" style="display:inline;">
                     <input type="hidden" name="action" id="commentModalAction"/>
                     <input type="hidden" name="id" id="commentModalId"/>
                     <button type="submit" class="btn btn-primary">Đồng ý</button>
