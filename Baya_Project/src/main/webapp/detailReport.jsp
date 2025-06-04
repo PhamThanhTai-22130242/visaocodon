@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN - Chỉnh Sửa Đơn Hàng</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+    <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/layout/styleAdmin.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <jsp:include page="SharedViews/SideBarAdmin.jsp" />
+
+        <!-- phần main -->
+        <div class="container addproduct-container createorder-container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="Dashboardadmin.jsp"><i class="fa-solid fa-house"
+                                                                                    style="margin:2px ;"></i>Tổng Quan</a></li>
+                        <li class="breadcrumb-item active">
+                                 Báo Cáo Danh thu</li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Header -->
+            <div class="row mb-3 header-list">
+                <div class="col-12">
+                    <h2 class="text-center " style="color: #fff;">Báo cáo doanh thu</h1>
+                </div>
+            </div>
+
+            <!-- Filter Selection -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="dateFilter" class="form-label">Chọn ngày:</label>
+                    <input type="date" class="form-control" id="dateFilter">
+                    <button class="btn btn-primary mt-3 ">
+                        Xem
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <label for="monthFilter" class="form-label">Chọn tháng:</label>
+                    <input type="month" class="form-control" id="monthFilter">
+                    <button class="btn btn-primary mt-3 ">
+                        Xem
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <label for="yearFilter" class="form-label">Chọn năm:</label>
+                    <input type="number" class="form-control" id="yearFilter" min="2000" max="2100" value="2024">
+                    <button class="btn btn-primary mt-3 ">
+                        Xem
+                    </button>
+                </div>
+            </div>
+
+            <!-- Revenue Stats -->
+            <div class="row">
+                <!-- Daily Revenue Card -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Doanh thu theo ngày
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Doanh thu trong ngày: <strong>1,500,000 VND</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Revenue Card -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Doanh thu theo tháng
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Doanh thu trong tháng: <strong>45,000,000 VND</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yearly Revenue Card -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Doanh thu theo năm
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Doanh thu trong năm: <strong>540,000,000 VND</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Container (Optional) -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Biểu đồ doanh thu
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <!-- Biểu đồ có thể tích hợp vào đây (sử dụng Chart.js, ApexCharts, etc.) -->
+                                <!-- Placeholder for chart -->
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scriptAdmin.js"></script>
+    <!-- Optional: Chart.js or any charting library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Example code to render a simple chart using Chart.js
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(ctx, {
+            type: 'line',  // or 'bar' for bar chart
+            data: {
+                labels: ['2024-11-01', '2024-11-02', '2024-11-03'], // Example dates
+                datasets: [{
+                    label: 'Doanh thu',
+                    data: [1500000, 1800000, 2000000], // Corresponding revenue for each date
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

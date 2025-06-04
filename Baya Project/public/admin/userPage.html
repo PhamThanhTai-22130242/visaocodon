@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADMIN</title>
+  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
+
+
+
+
+  <link rel="stylesheet" href="../assets/css/styleAdmin.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <aside id="sidebar">
+      <div class="d-flex">
+        <button class="toggle-btn" type="button">
+          <i class="fa-solid fa-border-all fa-lg"></i>
+        </button>
+        <div class="sidebar-logo">
+          <a href="adminPage.html">Admin</a>
+        </div>
+      </div>
+      <ul class="sidebar-nav">
+        <li class="sidebar-item">
+          <a href="adminPage.html" class="sidebar-link d-flex gap-3">
+            <i class="fa-solid fa-house"></i>
+            <div>Tổng Quan</div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="userPage.html" class="sidebar-link d-flex gap-3">
+            <i class="fa-solid fa-person"></i>
+            <div>Danh Sách Người Dùng</div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="productsPage.html" class="sidebar-link d-flex gap-3">
+            <i class="fa-solid fa-chair"></i>
+            <div>Danh Sách Sản Phẩm</div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="orderPage.html" class="sidebar-link d-flex gap-3">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <div>Danh Sách Đơn Hàng</div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="promotionPage.html" class="sidebar-link d-flex gap-3">
+            <i class="fa-solid fa-gift"></i>
+            <div>Danh Sách Khuyến Mãi</div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="newsPage.html" class="sidebar-link d-flex gap-3" id="btn-logout">
+            <i class="fa-solid fa-newspaper"></i>
+            <div>Danh Sách Tin Tức</div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#####" class="sidebar-link d-flex gap-3" id="btn-logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <div>Đăng Xuất</div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- phần main -->
+    <div class="container users-container">
+      <div class="row">
+
+      </div>
+      <!-- phần header -->
+      <div class="row header-list">
+        <div class="col-md-4 left-header">
+          <div class="col-12">
+            <div class="name-table">Danh Sách Người Dùng</div>
+            <div class="d-flex quantity-container">
+              <div class="" style="font-size: 1.2rem; font-weight: bold;">Số Lượng:</div>
+              <div class="quantity-item badge bg-success">100</div>
+              <div>Người dùng</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 right-header">
+          <div class="d-flex">
+            <div class="dropdown sort-container justify-content-between align-items-center">
+              <div class="d-flex">
+                <div class="pt-1">Sắp Xếp Theo:</div>
+                <button class="btn btn-sortlist" type="button" style="" id="dropdownMenuButton"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-sort"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#" data-sort="asc">Theo tên a-z</a></li>
+                  <li><a class="dropdown-item" href="#" data-sort="desc">Ngày đăng kí mới nhất</a></li>
+
+                </ul>
+              </div>
+
+            </div>
+
+            <form class="d-flex search-container">
+              <input class="form-control custom-search me-2" type="search" placeholder="Tìm kiếm..."
+                aria-label="Search">
+              <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+      <!-- Hai nút thêm và xem sản phẩm đã xóa -->
+
+
+      <!-- phần danh sách sản phẩm -->
+      <div class="row table-container ">
+        <div class="col-12">
+          <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>STT</th>
+                <th>Tên người dùng</th>
+                <th>Địa chỉ</th>
+                <th>SĐT</th>
+                <th>Quyền</th>
+                <th>Tùy chọn</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Nguyễn Văn A</td>
+                <td>0987654321</td>
+                <td>Hà Nội</td>
+                <td>Quản trị viên</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Trần Thị B</td>
+                <td>0912345678</td>
+                <td>Hồ Chí Minh</td>
+                <td>Quản trị viên</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Lê Văn C</td>
+                <td>0922334455</td>
+                <td>Đà Nẵng</td>
+                <td>Nhân Viên</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Nguyễn Thị D</td>
+                <td>0933445566</td>
+                <td>Cần Thơ</td>
+                <td>Quản trị viên</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Phan Thi E</td>
+                <td>0944556677</td>
+                <td>Bình Dương</td>
+                <td>Người Dùng</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Hoàng Văn F</td>
+                <td>0955667788</td>
+                <td>Nha Trang</td>
+                <td>Người Dùng</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Nguyễn Thị G</td>
+                <td>0966778899</td>
+                <td>Quảng Ninh</td>
+                <td>Nhân Viên</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Phạm Minh H</td>
+                <td>0977889900</td>
+                <td>Huế</td>
+                <td>Quản trị viên</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Võ Thi I</td>
+                <td>0988990011</td>
+                <td>An Giang</td>
+                <td>Quản trị viên</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Trần Minh J</td>
+                <td>0999001122</td>
+                <td>Sài Gòn</td>
+                <td>Nhân Viên</td>
+                <td>
+
+                  <a href="editUserPage.html"><button class="btn btn-warning btn-sm"><i
+                        class="fa-solid fa-pen-to-square"></i></button></a>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row pagination-container">
+        <div class="col-md-6 pagination-left">
+
+        </div>
+        <div class="col-md-6 pagination-right d-flex justify-content-end">
+          <table>
+            <tr>
+              <td colspan="10">
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-end pagination-menu">
+                    <li class="page-item"><a class="page-link" href="#">Trước</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+                  </ul>
+                </nav>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Phần modal popup thông báo -->
+  <!-- Modal xác nhận chặn -->
+  <!-- <div class="modal modal-lock  fade" id="lockModal" tabindex="-1" aria-labelledby="lockModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="lockModalLabel">Xác nhận chặn</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Bạn có chắc chắn muốn chặn người này?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-primary" id="confirm-lock">Đồng ý</button>
+        </div>
+      </div>
+    </div>
+  </div>
+-- Modal xác nhận mở chặn -->
+  <div class="modal fade" id="openModal" tabindex="-1" aria-labelledby="openModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="openModalLabel">Xác nhận gỡ chặn</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Bạn có chắc chắn muốn gỡ chặn người này?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-primary" id="confirm-open">Đồng ý</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Modal xác nhận xóa -->
+  <div class="modal fade " id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Xác Nhận Xóa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Bạn có chắc chắn muốn xóa người dùng này không?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Đồng Ý</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Thêm Popper.js và Bootstrap JS Bundle cho các tính năng JavaScript của Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/scriptAdmin.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>

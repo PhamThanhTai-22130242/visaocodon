@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+    <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../assets/css/styleAdmin.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="fa-solid fa-border-all fa-lg"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="adminPage.html">Admin </a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item ">
+                    <a href="adminPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-house"></i>
+                        <div>Tổng Quan</div>
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="userPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-person"></i>
+                        <div>Danh Sách Người Dùng</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="productsPage.html" class="sidebar-link d-flex gap-3 ">
+                        <i class="fa-solid fa-chair"></i>
+                        <div>Danh Sách Sản Phẩm </div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="orderPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <div>Danh Sách Đơn Hàng</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="promotionPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-gift"></i>
+                        <div>Danh Sách Khuyến Mãi</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="newsPage.html" class="sidebar-link d-flex gap-3" id="btn-logout">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <div>Danh Sách Tin Tức</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#####" class="sidebar-link d-flex gap-3" id="btn-logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div>Đăng Xuất</div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- phần main -->
+        <div class="container editorder-container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="adminPage.html"><i class="fa-solid fa-house "
+                                    style="margin:2px ;"></i>Tổng Quan</a></li>
+                        <li class="breadcrumb-item"><a href="orderPage.html"> <i class="fa-solid fa-file-invoice-dollar"
+                                    style="margin:2px ;"></i> Danh Sách Đơn Hàng</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chỉnh Sửa Đơn Hàng</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row header-createorder">
+                <div class="col-12">
+                    <div class="title-createorder">
+                        Chỉnh Sửa Đơn Hàng
+                        <h4 class="id-detailorder">#HD001</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row main-editorder ">
+                <form action="" method="" class="d-flex">
+                    <div class=" editorder-left col-12">
+                        <div class="mb-2">
+                            <h4 class="form-title">Thông Tin Khách Hàng</h4>
+                            <label for="usernameRE" class="form-label">Người Nhận</label>
+                            <input type="text" class="form-control input-size-createorder color-input" id="usernameRE"
+                                value="Nguyễn Văn A" name="usernameRE" required placeholder="Tên người nhận">
+                        </div>
+                        <div class="mb-2">
+                            <label for="phoneRE" class="form-label">SĐT Người Nhận</label>
+                            <input type="text" class="form-control input-size-createorder color-input" id="phoneRE"
+                                name="phoneRE" value="12345678" required maxlength="10"
+                                placeholder="Số điện thoại người nhận">
+                        </div>
+                        <div class="mb-2">
+                            <label for="mailRE" class="form-label">Email Người Nhận</label>
+                            <input type="email" class="form-control input-size-createorder color-input" id="mailRE"
+                                name="mailRE" value="abc@gmail.com" placeholder="Email người nhận">
+                        </div>
+                        <div class="mb-2">
+                            <label for="phoneRE" class="form-label">Phương thức thanh toán</label>
+                            <input type="text" class="form-control input-size-createorder color-input" id="phoneRE"
+                                name="phoneRE" value="COD" required maxlength="10" placeholder="Phương thức thanh toán">
+                        </div>
+                        <div class="mb-3">
+                            <label for="note" class="form-label">Ghi Chú Đơn Hàng</label>
+                            <input type="text" class="form-control input-size-createorder color-input" style=" width: 50%; height: 100px; /* Đặt độ rộng là 100% */
+                            padding: 10px; /* Thêm padding nếu cần */
+                            font-size: 16px; " id="note" name="note" placeholder="Lời nhắn, yêu cầu đặc biệt"
+                                value="giao sớm giúp tôi">
+                        </div>
+
+                    </div>
+                    <div class=" editorder-right col-12">
+                        <div class="mb-2">
+                            <h4 class="form-title">Thông Tin Giao Hàng</h4>
+                            <label for="dayE" class="form-label">Ngày tạo</label>
+                            <input type="datetime-local" class="form-control input-size-createorder color-input"
+                                id="dayE" name="dayE" value="2024-11-30T10:00" required>
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="address" class="form-label">Địa Chỉ Giao</label>
+                            <input type="text" class="form-control input-size-createorder color-input" id="address"
+                                name="address" required placeholder="Địa chỉ giao hàng"
+                                value="Đông Hòa,Dĩ An, Bình Dương">
+                        </div>
+                        <div class="mb-2">
+                            <label for="status" class="form-label">Trạng Thái Đơn Hàng</label>
+                            <select class="form-control input-size-createorder color-input" id="status" name="status"
+                                required>
+                                <option value="0">Chờ Xử Lý</option>
+                                <option value="1">Đang Giao</option>
+                                <option value="2">Đã Giao</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row mt-3 custom-dropdown-editorder-container">
+                <div class="custom-dropdown-editorder">
+
+                    <div class="dropdown-menu-editorder" id="dropdownMenu">
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product1-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 1" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Ghế sắt</h5>
+                                <span class="quantity">Số lượng: 10</span>
+                            </div>
+                        </label>
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product2-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 2" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Bàn</h5>
+                                <span class="quantity">Số lượng: 15</span>
+                            </div>
+                        </label>
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product3-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 3" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Đèn Ngủ</h5>
+                                <span class="quantity">Số lượng: 8</span>
+                            </div>
+                        </label>
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product4-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 4" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Đèn treo tường</h5>
+                                <span class="quantity">Số lượng: 20</span>
+                            </div>
+                        </label>
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product5-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 5" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Thảm nhựa</h5>
+                                <span class="quantity">Số lượng: 5</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 addproduct-createorder">
+                <div class="col-12">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã SP</th>
+                                <th>Ảnh </th>
+                                <th>Tên sản phẩm</th>
+                                <th>Đơn Giá </th>
+                                <th>Số Lượng</th>
+                                <th>Thành Tiền</th>
+                                <th>Tùy chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sản phẩm 1 -->
+                            <tr>
+                                <td>1</td>
+                                <td>SP001</td>
+                                <td><img src="path/to/image1.jpg" alt="Ảnh sản phẩm 1" width="50" height="50"></td>
+                                <td>Bàn ăn gỗ</td>
+                                <td>3,000,000 VND</td>
+                                <td><input type="number" value="1" min="1" max="10" class="form-control"
+                                        style="width: 80px;"></td>
+                                <td>3,000,000 VND</td>
+                                <td><button class="btn btn-danger btn-sm btn-delete"><i
+                                            class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <!-- Sản phẩm 2 -->
+                            <tr>
+                                <td>2</td>
+                                <td>SP002</td>
+                                <td><img src="path/to/image2.jpg" alt="Ảnh sản phẩm 2" width="50" height="50"></td>
+                                <td>Ghế sofa da</td>
+                                <td>8,500,000 VND</td>
+                                <td><input type="number" value="2" min="1" max="10" class="form-control"
+                                        style="width: 80px;"></td>
+                                <td>17,000,000 VND</td>
+                                <td><button class="btn btn-danger btn-sm btn-delete"><i
+                                            class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <!-- Sản phẩm 3 -->
+                            <tr>
+                                <td>3</td>
+                                <td>SP003</td>
+                                <td><img src="path/to/image3.jpg" alt="Ảnh sản phẩm 3" width="50" height="50"></td>
+                                <td>Tủ quần áo 4 cánh</td>
+                                <td>6,500,000 VND</td>
+                                <td><input type="number" value="1" min="1" max="10" class="form-control"
+                                        style="width: 80px;"></td>
+                                <td>6,500,000 VND</td>
+                                <td><button class="btn btn-danger btn-sm btn-delete"><i
+                                            class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <!-- Sản phẩm 4 -->
+                            <tr>
+                                <td>4</td>
+                                <td>SP004</td>
+                                <td><img src="path/to/image4.jpg" alt="Ảnh sản phẩm 4" width="50" height="50"></td>
+                                <td>Đèn chùm</td>
+                                <td>1,200,000 VND</td>
+                                <td><input type="number" value="3" min="1" max="10" class="form-control"
+                                        style="width: 80px;"></td>
+                                <td>3,600,000 VND</td>
+                                <td><button class="btn btn-danger btn-sm btn-delete"><i
+                                            class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <!-- Sản phẩm 5 -->
+                            <tr>
+                                <td>5</td>
+                                <td>SP005</td>
+                                <td><img src="path/to/image5.jpg" alt="Ảnh sản phẩm 5" width="50" height="50"></td>
+                                <td>Giường ngủ gỗ</td>
+                                <td>5,000,000 VND</td>
+                                <td><input type="number" value="1" min="1" max="10" class="form-control"
+                                        style="width: 80px;"></td>
+                                <td>5,000,000 VND</td>
+                                <td><button class="btn btn-danger btn-sm btn-delete"><i
+                                            class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row button-createorder-container mt-4 mb-4">
+                <div class="col-12 mt-3 mb-3">
+                    <button type="submit" class="btn btn-success btn-light " style="color: white;"
+                        id="btn-createorder">Tạo Đơn Hàng</button>
+                </div>
+            </div>
+
+            <div class="row footer-addproduct">
+            </div>
+        </div>
+        <!-- end addproduct-container -->
+
+    </div>
+
+    <!-- Phần modal popup thông báo xác nhận xóa -->
+    <!-- Modal xác nhận xóa -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Xác Nhận Xóa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn xóa đơn hàng này không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Đồng Ý</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/scriptAdmin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+
+
+
+### IntelliJ IDEA ###
+# Ignore .idea folder and its contents
+Baya_Project/.idea/
+
+# Alternatively, to ignore specific files under .idea
+Baya_Project/.idea/artifacts/Baya_Project_war.xml
+Baya_Project/.idea/artifacts/Baya_Project_war_exploded.xml
+Baya_Project/.idea/misc.xml
+
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+.idea/workspace.xml
+*.iws
+*.iml
+*.ipr
+
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store

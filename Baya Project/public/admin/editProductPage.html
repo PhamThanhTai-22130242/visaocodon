@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+    <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../assets/css/styleAdmin.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="fa-solid fa-border-all fa-lg"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="adminPage.html">Admin </a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item ">
+                    <a href="adminPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-house"></i>
+                        <div>Tổng Quan</div>
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="userPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-person"></i>
+                        <div>Danh Sách Người Dùng</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="productsPage.html" class="sidebar-link d-flex gap-3 ">
+                        <i class="fa-solid fa-chair"></i>
+                        <div>Danh Sách Sản Phẩm </div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="orderPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <div>Danh Sách Đơn Hàng</div>
+                    </a>
+                </li>
+                <!-- <li class="sidebar-item"> -->
+                <!-- databstoggle: collapse như bảng điều khiển để chỉ định mở/đóng phần tử khác
+                    collapsed: ẩn menu con
+                    collapse: đặt ở menu con để ẩn nó, khi ấp vào lớp này sẽ xóa để hiển thị ra
+                    data-bs-parent="#sidebar": nó quy định chỉ có 1 menu được mở ở trong sidebar nếu mở 1 cái all cái đóng lại.
+                    
+                    -->
+                <!-- <a href="profilePage.html" class=" d-flex gap-3 sidebar-link has-dropdown collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        <i class="fa-solid fa-user"></i>
+                        <div>Tài khoản</div>
+                    </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="###" class="sidebar-link">
+                                Đăng Nhập
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="###" class="sidebar-link">
+                                Đăng Ký
+                            </a>
+                        </li>
+                    </ul>
+                </li> -->
+                <li class="sidebar-item">
+                    <a href="promotionPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-gift"></i>
+                        <div>Danh Sách Khuyến Mãi</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="newsPage.html" class="sidebar-link d-flex gap-3" id="btn-logout">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <div>Danh Sách Tin Tức</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#####" class="sidebar-link d-flex gap-3" id="btn-logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div>Đăng Xuất</div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- phần main -->
+        <div class="container addproduct-container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="adminPage.html"><i class="fa-solid fa-house "
+                                    style="margin:2px ;"></i>Tổng Quan</a></li>
+                        <li class="breadcrumb-item"><a href="productsPage.html"> <i class="fa-solid fa-chair"
+                                    style="margin:2px ;"></i>Danh Sách Sản Phẩm</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chỉnh Sửa Sản Phẩm</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row header-addproduct">
+                <div class="col-12">
+                    <div class="title-addproduct">
+                        Chỉnh Sửa Sản Phẩm
+                    </div>
+                </div>
+            </div>
+            <div class="row main-addproduct mt-3">
+                <form action="" class="form-addproduct d-flex">
+                    <div class="col-12 col-md-6 addproduct-form-left">
+                        <!-- Ảnh chính -->
+                        <div class="mb-1">
+                            <div class="form-img-left">
+                                <label for="form-img-upload">Thumbnail</label>
+                                <input id="form-img-upload" onchange="chooseFile(this)" name="upload" type="file"
+                                    accept=".png, .jpg, .jpeg">
+                                <img id="form-img-left" src="path/to/product-image.jpg" alt="Product Thumbnail">
+                            </div>
+                        </div>
+
+                        <!-- Chọn Danh Mục Chính -->
+                        <div class="mb-1">
+                            <label for="category" class="form-label">Danh Mục Chính</label>
+                            <select class="form-select" id="category">
+                                <option value="1" selected>Ghế</option>
+                                <option value="2">Bàn</option>
+                                <option value="3">Tủ</option>
+                                <option value="other">Khác (Thêm mới)</option>
+                            </select>
+                        </div>
+
+                        <!-- Nhập Danh Mục Mới (Hiển thị khi chọn 'Khác') -->
+                        <div class="mb-1 new-category-input">
+                            <label for="newCategory" class="form-label">Nhập Danh Mục Mới</label>
+                            <input type="text" class="form-control" id="newCategory" placeholder="Nhập danh mục mới">
+                        </div>
+
+                        <!-- Chọn Danh Mục Con -->
+                        <div class="mt-3 mb-1">
+                            <label for="subCategory" class="form-label">Danh Mục Con</label>
+                            <select class="form-select" id="subCategory">
+                                <option value="A" selected>Ghế A</option>
+                                <option value="B">Ghế B</option>
+                                <option value="C">Ghế C</option>
+                            </select>
+                        </div>
+
+                        <!-- Nhập Danh Mục Con Mới (Hiển thị khi chọn 'Khác') -->
+                        <div class="mb-1 new-subcategory-input">
+                            <label for="newSubCategory" class="form-label">Nhập Danh Mục Con Mới</label>
+                            <input type="text" class="form-control" id="newSubCategory"
+                                placeholder="Nhập danh mục con mới">
+                        </div>
+
+                        <!-- Ảnh liên quan -->
+                        <div class="mb-1">
+                            <label for="related-images" class="form-label">Ảnh liên quan:</label>
+                            <input type="file" class="form-control" id="related-images" name="related_images[]"
+                                accept="image/*" multiple>
+                            <small id="image-help" class="form-text text-muted">Tối đa 3 ảnh.</small>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 addproduct-form-right">
+                        <div class="mb-1">
+                            <label for="description-product" class="form-label ">Mã Sản Phẩm</label>
+                            <input type="text" class="form-control input-size-addproduct color-input" id="sizeproduct"
+                                placeholder="Nhập Mã Sản Phẩm" value="SP001" required>
+                        </div>
+                        <!-- Tên sản phẩm -->
+                        <div class="mb-1">
+                            <label for="product-name" class="form-label ">Tên Sản Phẩm</label>
+                            <input type="text" class="form-control input-size-addproduct color-input" id="product-name"
+                                placeholder="Nhập tên sản phẩm" value="Ghế nệm cao su" required>
+                        </div>
+
+
+                        <div class="mb-1">
+                            <label for="product-price" class="form-label">Giá</label>
+                            <input type="text" class="form-control input-size-addproduct color-input" id="product-price"
+                                value="200.000" placeholder="Nhập giá sản phẩm" required>
+                        </div>
+
+
+                        <!-- Mô tả -->
+                        <div class="mb-1">
+                            <label for="material" class="form-label ">Mô Tả Sản Phẩm</label>
+                            <textarea type="text" class="form-control input-size-addproduct color-input"
+                                id="sizeproduct" style="height: 200px;" placeholder="Nhập Mô Tả" required></textarea>
+                        </div>
+
+                        <div class="mb-1">
+                            <label for="size-product" class="form-label ">Kích Thước</label>
+                            <input type="text" class="form-control input-size-addproduct color-input" id="sizeproduct"
+                                placeholder="Nhập kích thước" required>
+                        </div>
+                        <!-- Chất liệu -->
+                        <div class="mb-1">
+                            <label for="material-product" class="form-label ">Chất Liệu</label>
+                            <textarea type="text" class="form-control input-size-addproduct color-input"
+                                id="sizeproduct" style="height: 200px;" placeholder="Nhập Mô Tả" required></textarea>
+                        </div>
+
+
+                        <!-- Xuất xứ -->
+                        <div class="mb-1">
+                            <label for="origin" class="form-label">Xuất Xứ</label>
+                            <input type="text" class="form-control input-size-addproduct color-input" id="origin"
+                                value="China" placeholder="Nhập xuất xứ" required>
+                        </div>
+
+                        <!-- Số lượng -->
+                        <div class="mb-1">
+                            <label for="quantity" class="form-label">Số Lượng Trong Kho</label>
+                            <input type="text" class="form-control input-size-addproduct color-input" id="quantity"
+                                value="20" placeholder="Nhập số lượng" required>
+                        </div>
+
+
+
+                        <!-- ngày tạo -->
+                        <div class="mb-1 new-date-input">
+                            <label for="createDate" class="form-label">Ngày Tạo</label>
+                            <input type="date" class="form-control input-size-addproduct" id="createDate"
+                                placeholder="Chọn ngày tạo" value="2024-12-01">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-light " style="color: white;"
+                            id="btn-addproduct">Thêm Sản Phẩm</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row footer-addproduct">
+            </div>
+        </div>
+
+        <!-- end addproduct-container -->
+
+    </div>
+    <!-- Phần modal popup thông báo xác nhận xóa -->
+    <!-- Modal xác nhận xóa -->
+    <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Xác Nhận Thêm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn chỉnh sửa sản phẩm này không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                    <button type="button" class="btn btn-success" id="confirmDeleteBtn">Đồng Ý</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/scriptAdmin.js"></script>
+    <script>
+        // Hiển thị/ẩn các trường nhập khi chọn 'Khác' trong Danh Mục Chính
+        document.getElementById("category").addEventListener("change", function () {
+            const newCategoryInput = document.querySelector('.new-category-input');
+            newCategoryInput.style.display = (this.value === 'other') ? 'block' : 'none';
+        });
+
+        document.getElementById("subCategory").addEventListener("change", function () {
+            const newSubCategoryInput = document.querySelector('.new-subcategory-input');
+            newSubCategoryInput.style.display = (this.value === 'other') ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>

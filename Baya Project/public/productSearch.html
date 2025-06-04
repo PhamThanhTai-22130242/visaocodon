@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tất cả sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/reset/reset.css">
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <link rel="stylesheet" href="./assets/css/pages/home.css">
+    <link rel="stylesheet" href="./assets/css/pages/productDetail.css">
+    <link rel="stylesheet" href="./assets/css/layout/header.css">
+    <link rel="stylesheet" href="./assets/css/pages/productSearch.css">
+    <link rel="stylesheet" href="./assets/css/layout/modal.css">
+    <link rel="stylesheet" href="./assets/css/layout/footer.css">
+    <link rel="stylesheet" href="./assets/css/layout/breadcrumb.css">
+    <link rel="shortcut icon" href="./assets/images/favicons/favicon_logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <!-- HEADER  -->
+        <div class="header">
+            <div class="header_main">
+
+
+                <div class="header_logo">
+                    <a href="index.html"><img src="./assets/images/logo/logo-final (3) (1).png" alt="logo"> </a>
+                </div>
+                <div href="" class="header_item item_category " onclick="openCategory()">
+
+                    <div class="item_box ">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div class="item_content">
+                        <p>Danh mục</p>
+                    </div>
+
+                </div>
+
+                <div class="header_search">
+                    <button type="submit" class="search_box search_box_color">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </button>
+
+                    <input type="text" class="search_input " placeholder="Bạn tìm gì...">
+
+
+                </div>
+
+                <!-- item header -->
+
+                <a href="cart.html" target="_blank" class="header_item">
+                    <div class="item_box ">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="item_content">
+                        <p>Giỏ hàng</p>
+                    </div>
+                </a>
+
+                <a href="login.html" target="_blank" class="header_item">
+
+                    <div class="item_box ">
+                        <i class="fa-regular fa-user color-while"></i>
+                    </div>
+                    <div class="item_content">
+                        <p>Đăng nhập</p>
+                    </div>
+
+                </a>
+                <a href="storeAddress.html" target="_blank" class="header_address ">
+                    <div class="address_alpha">
+                        <div class="item_box ">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="item_content">
+                            <p>Tp. Hồ Chí Minh</p>
+                        </div>
+                    </div>
+
+                    <div class="item_box address_beta ">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </a>
+
+
+            </div>
+        </div>
+
+
+        <div class="body_home">
+            <div class="main_container  ">
+                <div class="breadcrumb">
+                    <ul>
+                        <li> <a href="">Trang chủ</a> </li>
+                        <li>/</li>
+                        <li><a href="">Tất cả sản phẩm</a></li>
+                    </ul>
+                </div>
+
+                <div class="block_product bg-while">
+                    <div class="filter-bar">
+                        <div class="filter-options">
+                            <button class="filter-button"> <i class="fa-solid fa-filter"></i>
+                                Tất cả sản phẩm</button>
+
+                        </div>
+
+                        <div class="sort-options">
+                            <span>Sắp xếp theo:</span>
+                            <button class="sort-button active">Nổi bật</button>
+                            <button class="sort-button">Bán chạy</button>
+                            <button class="sort-button">Giảm giá</button>
+                            <button class="sort-button">Mới</button>
+                            <button class="sort-button btn_hover-price">
+                                <p>Giá </p>
+                                <ul>
+                                    <li>Từ cao đến thấp</li>
+                                    <li>Từ thấp đến cao</li>
+                                </ul>
+
+                            </button>
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product_list sale_list">
+
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="product_card">
+                            <div class="card_image">
+                                <img src="https://product.hstatic.net/200000065946/product/pro_mau_tu_nhien_noi_that_moho_ghe_sofa_go_vline_1_19dcd6f51c9a452cb3647ae432b20e0f_master.jpg"
+                                    alt="product">
+                            </div>
+                            <div class="card_tilte">
+                                <h4>Ghế Sofa góc hiện đại HOBRO</h4>
+                            </div>
+
+                            <p class="card_price-show">1.900.000đ</p>
+
+                            <div class="card_price-discount">
+                                <p class="card_price-through">2.400.000đ</p>
+                                <b>-10%</b>
+                            </div>
+
+
+                            <div class="card_bottom">
+                                <div class="card_vote">
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="magin-right">4.2</p>
+                                    <p>(
+                                    <p>187</p>)</p>
+
+                                </div>
+                                <div class="card_add-cart">
+                                    <i class="fa-solid fa-cart-arrow-down">
+
+                                    </i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="see_more-product">
+                        <div class="fui-basic-pagination">
+                            <ul class="pagination-list">
+                                <li class="pagination-item btn-prev">
+                                    <a href="#" class="pagination-link">
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.20711 0.792893C5.59763 1.18342 5.59763 1.81658 5.20711 2.20711L2.41421 5L5.20711 7.79289C5.59763 8.18342 5.59763 8.81658 5.20711 9.20711C4.81658 9.59763 4.18342 9.59763 3.79289 9.20711L0.292893 5.70711C-0.0976311 5.31658 -0.0976311 4.68342 0.292893 4.29289L3.79289 0.792893C4.18342 0.402369 4.81658 0.402369 5.20711 0.792893Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="#" class="pagination-link">1</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="#" class="pagination-link selected">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="#" class="pagination-link">3</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="#" class="pagination-link">4</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="#" class="pagination-link">5</a>
+                                </li>
+                                <li class="pagination-item btn-next">
+                                    <a href="#" class="pagination-link">
+                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.792893 0.792893C0.402369 1.18342 0.402369 1.81658 0.792893 2.20711L3.58579 5L0.792893 7.79289C0.402369 8.18342 0.402369 8.81658 0.792893 9.20711C1.18342 9.59763 1.81658 9.59763 2.20711 9.20711L5.70711 5.70711C6.09763 5.31658 6.09763 4.68342 5.70711 4.29289L2.20711 0.792893C1.81658 0.402369 1.18342 0.402369 0.792893 0.792893Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- footer  -->
+        <div class="footer">
+            <div class="footer-top">
+                <div class="newsletter">
+                    <p>Đăng ký nhận tin</p>
+                    <div class="newsletter-input">
+                        <input type="email" placeholder="Nhập email của bạn">
+                        <button>ĐĂNG KÝ</button>
+                    </div>
+                </div>
+                <div class="social">
+                    <p>Kết nối với chúng tôi</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CÔNG TY NỘI THẤT BAYA</h3>
+                    <ul>
+
+                        <li>Thương hiệu nội thất và trang trí hàng đầu Việt Nam, góp phần xây dựng thêm nhiều tổ ấm mỗi
+                            ngày.
+                        </li>
+                        <li><i class="fa-solid fa-location-dot"></i> Tầng 08, Tòa nhà Pearl Plaza, Số 561A
+                            Điện Biên
+                            Phủ,
+                            Phường 25, Quận Bình Thạnh, Thành phố Hồ
+                            Chí Minh </li>
+                        <li><i class="fa-solid fa-phone"></i> 1900 63 64 76</li>
+                        <li><i class="fa-solid fa-envelope"></i> webshop@baya.vn</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>VỀ BAYA</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Giới thiệu</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Liên hệ</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Blog</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Hệ thống cửa hàng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Câu hỏi thường gặp</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Hướng dẫn đặt hàng</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Mua hàng trả góp</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Hướng dẫn thanh toán VNPAY-QR</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>CHÍNH SÁCH</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small "></i>Chính sách bảo hành</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Chi phí vận chuyển</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Chính sách đổi trả và hoàn tiền</a>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Chính sách vận chuyển</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Các hình thức thanh toán</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Chính sách bảo mật thông tin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2024 Baya. Powered by Nhóm 1</p>
+            </div>
+        </div>
+        <!-- end footer  -->
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal_overlay" onclick="closeCategory()">
+
+        </div>
+        <div class="modal_body-category">
+            <div class="top_menu">
+                <ul>
+                    <li>
+                        <div class="menu_category" data-category="phong-lam-viec">
+                            <p>Phòng làm việc</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu_category" data-category="phong-khach">
+                            <p>Phòng khách</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu_category" data-category="phong-ngu">
+                            <p>Phòng ngủ</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu_category" data-category="tu-bep">
+                            <p>Tủ bếp</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu_category" data-category="phong-an">
+                            <p>Phòng ăn</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="sub_category_wrapper">
+                <div class="category_list" id="phong-lam-viec">
+                    <a class="category-item" href="productSearch.html">
+
+                        <img src="https://product.hstatic.net/200000065946/product/pro_nau_noi_that_moho_ghe_bdc5094c1d0a4520b209c54ea88e10ba_master.jpg"
+                            alt="img">
+                        <p>Bàn làm việc</p>
+
+                    </a>
+                    <a class="category-item" href="productSearch.html">
+
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG-buIdH3shs3NaAiqPwff0BSvhRDRVGKfaA&s"
+                            alt="img">
+                        <p>Ghế văn phòng</p>
+
+                    </a>
+                    <a class="category-item" href="productSearch.html">
+
+                        <img src="https://product.hstatic.net/200000065946/product/pro_nau_noi_that_moho_ghe_bdc5094c1d0a4520b209c54ea88e10ba_master.jpg"
+                            alt="img">
+                        <p>Tủ-kệ</p>
+
+                    </a>
+
+
+                </div>
+                <div class="category_list" id="phong-khach">
+                    <a class="category-item" href="productSearch.html">
+
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG-buIdH3shs3NaAiqPwff0BSvhRDRVGKfaA&s"
+                            alt="img">
+                        <p>Ghế Sofa</p>
+
+                    </a>
+                    <a class="category-item" href="productSearch.html">
+
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG-buIdH3shs3NaAiqPwff0BSvhRDRVGKfaA&s"
+                            alt="img">
+                        <p>Bàn </p>
+
+                    </a>
+                </div>
+                <div class="category_list" id="phong-ngu">
+
+                </div>
+                <div class="category_list" id="tu-bep">
+
+                </div>
+                <div class="category_list" id="phong-an">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/sliderSearchPro.js"></script>
+    <script src="./assets/js/modal.js"></script>
+    <script>
+        function goToProDetail() {
+            var url = "productDetail.html";
+            window.location.href = url;
+        }
+    </script>
+</body>
+
+</html>

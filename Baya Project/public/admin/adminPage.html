@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADMIN</title>
+  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+  <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../assets/css/layout/styleAdmin.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <aside id="sidebar">
+      <div class="d-flex">
+        <button class="toggle-btn" type="button">
+          <i class="fa-solid fa-border-all fa-lg"></i>
+        </button>
+        <div class="sidebar-logo">
+          <a href="adminPage.html">Admin </a>
+        </div>
+      </div>
+      <ul class="sidebar-nav">
+        <li class="sidebar-item ">
+          <a href="adminPage.html" class="sidebar-link d-flex gap-3">
+            <i class="fa-solid fa-house"></i>
+            <div>Tổng Quan</div>
+          </a>
+        </li>
+        <li class="sidebar-item ">
+          <a href="userPage.html" class="sidebar-link d-flex gap-3">
+            <i class="fa-solid fa-person"></i>
+            <div>Danh Sách Người Dùng</div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="productsPage.html" class="sidebar-link d-flex gap-3 ">
+            <i class="fa-solid fa-chair"></i>
+            <div>Danh Sách Sản Phẩm </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="orderPage.html" class="sidebar-link d-flex gap-3">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <div>Danh Sách Đơn Hàng</div>
+          </a>
+        </li>
+        <!-- <li class="sidebar-item"> -->
+        <!-- databstoggle: collapse như bảng điều khiển để chỉ định mở/đóng phần tử khác
+                    collapsed: ẩn menu con
+                    collapse: đặt ở menu con để ẩn nó, khi ấp vào lớp này sẽ xóa để hiển thị ra
+                    data-bs-parent="#sidebar": nó quy định chỉ có 1 menu được mở ở trong sidebar nếu mở 1 cái all cái đóng lại.
+                    
+                    -->
+        <!-- <a href="#####" class=" d-flex gap-3 sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
+            data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+            <i class="fa-solid fa-user"></i>
+            <div>Tài Khoản</div>
+          </a>
+          <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+            <li class="sidebar-item">
+              <a href="###" class="sidebar-link">
+                Hồ Sơ
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="###" class="sidebar-link">
+                Đăng Xuất
+              </a>
+            </li>
+          </ul>
+        </li> -->
+        <li class="sidebar-item">
+          <a href="promotionPage.html" class="sidebar-link d-flex gap-3">
+            <i class="fa-solid fa-gift"></i>
+            <div>Danh Sách Khuyến Mãi</div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="newsPage.html" class="sidebar-link d-flex gap-3" id="btn-logout">
+            <i class="fa-solid fa-newspaper"></i>
+            <div>Danh Sách Tin Tức</div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#####" class="sidebar-link d-flex gap-3" id="btn-logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <div>Đăng Xuất</div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- Phần Tổng Quan -->
+    <div class="container mt-4 main-content">
+      <div class="row row-search">
+        <div class="col-md-6">
+          <form action="searching" class="d-flex">
+            <!-- me-2: Lớp me-2 (margin end) tạo một khoảng cách nhỏ bên phải ô tìm kiếm, giúp không bị dính sát vào nút tìm kiếm.
+py-3: Tăng khoảng cách padding trên và dưới của ô nhập liệu. -->
+            <input class="form-control me-2 " type="search" placeholder="Tìm kiếm" aria-label="Search">
+            <button class="btn btn-primary btn-light " style="background-color: #e62727;" type="submit">
+              <i class="fa-solid fa-magnifying-glass  " style="color: rgb(239, 232, 236);"></i>
+            </button>
+          </form>
+        </div>
+        <div class="col-md-6 avatar-container ">
+          <div class="d-flex ">
+            <div class="dropdown">
+              <button class="btn btn-info " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                aria-expanded="false" style="width: 200px;">
+                <div class="d-flex ">
+                  <div class="">Welcome,</div>
+                  <div class="name-user">Tấn Kiệt</div>
+                  <i class="fa-solid fa-angle-down mt-1  "></i>
+                </div>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="profilePage.html">Hồ Sơ</a></li>
+                <li><a class="dropdown-item" href="#">Đăng Xuất</a></li>
+              </ul>
+            </div>
+
+
+            <div class="avatar align-items-end pl-6 justify-content-end">
+              <a href="profilePage.html"><img src="../assets/images/admin/avatarchair.jpg" alt="Avatar"
+                  class="rounded-circle img-avatar" width="40" height="40"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3 container-statisticalcard">
+        <!-- Card Tổng Doanh Thu Theo tháng -->
+        <div class="col-md-3">
+          <div class="card text-white mb-4  " style="background-color: #003366">
+            <div class="card-header d-flex">
+              <i class="fa-solid fa-chart-pie fa-2x "></i>
+              <h5 class="">Tổng Người Dùng</h5>
+            </div>
+            <div class="card-body">
+              <h3>500</h3>
+              <p>Người Dùng</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- sản phẩm còn trong kho -->
+        <div class="col-md-3">
+          <div class="card text-white mb-4" style="background-color: #003366">
+            <div class="card-header d-flex pr-1">
+              <i class="fa-brands fa-product-hunt fa-2x"></i>
+              <h5 class="">Tổng Sản Phẩm</h5>
+            </div>
+            <div class="card-body">
+              <h3>450 </h3>
+              <p>Sản Phẩm Trong Kho</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Số doanh thu trong ngày -->
+        <div class="col-md-3">
+          <div class="card text-white mb-4" style="background-color: #003366">
+            <div class="card-header d-flex">
+              <i class="fa-solid fa-chart-line fa-2x mr-1"></i>
+              <h5>Doanh Thu Hôm Nay</h5>
+            </div>
+            <div class="card-body">
+              <h3>30000Đ</h3>
+              <p>Danh Thu Trong Ngày Hôm Nay</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Số Đơn Hàng -->
+        <div class="col-md-3">
+          <div class="card text-white mb-4 " style="background-color: #003366">
+            <div class="card-header d-flex">
+              <i class="fa-solid fa-file-invoice fa-2x"></i>
+              <h5>Đơn cần xác nhận</h5>
+            </div>
+            <div class="card-body">
+              <h3>350</h3>
+              <p>trong hôm nay</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4 detail-report-container ">
+        <div class="col-md-6">
+          <h2 style="font-weight: bold;">Báo Cáo Doanh Thu Chi Tiết</h2>
+          <a class="detail-report" href="detailReport.html" style="border: 2px solid black; padding-top: 12px;"><i
+              class="fa-solid fa-chart-line fa-2x mr-1"></i></a>
+        </div>
+      </div>
+
+      <!-- bảng đơn hàng gần đây -->
+      <div class="row row-table-orderrecent">
+        <h2 class="mb-4 listorder " style="color: black;">Danh Sách Đơn Hàng</h2>
+        <div class="d-flex alldisplay">
+          <div class="col-md-6 recent" style="color: black;">Đơn Hàng Gần Đây</div>
+          <div class="col-md-6 align-items-end all" style=""><a href="orderPage.html"> Xem Tất Cả</a> </div>
+        </div>
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>STT</th>
+              <th>Khách Hàng</th>
+              <th>Ngày Đặt</th>
+              <th>Địa Chỉ Giao</th>
+              <th>Ghi Chú</th>
+              <th>Thành Tiền</th>
+              <th>Trạng Thái ĐH</th>
+              <th>Tùy Chọn</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Nguyễn Văn A</td>
+              <td>2024-11-25</td>
+              <td>Hà Nội, Việt Nam</td>
+              <td>Ghế sofa phòng khách</td>
+              <td>5,000,000 VND</td>
+              <td><span class="badge bg-secondary">Chờ xác nhận</span></td>
+              <td>
+                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#confirmOrderModal"><i
+                    class="fa-solid fa-check"></i></button>
+                <a href="detailOrderPage.html"><button class="btn btn-info btn-sm"><i
+                      class="fa-solid fa-circle-info"></i></button></a>
+                <a href="editOrderPage.html"><button class="btn btn-warning btn-sm"><i
+                      class="fa-solid fa-pen-to-square"></i></button></a>
+                <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Trần Thị B</td>
+              <td>2024-11-24</td>
+              <td>TP.HCM, Việt Nam</td>
+              <td>Bàn ăn 6 ghế</td>
+              <td>4,200,000 VND</td>
+              <td><span class="badge bg-secondary">Chờ xác nhận</span></td>
+              <td>
+                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#confirmOrderModal"><i
+                    class="fa-solid fa-check"></i></button>
+                <a href="detailOrderPage.html"><button class="btn btn-info btn-sm"><i
+                      class="fa-solid fa-circle-info"></i></button></a>
+                <a href="editOrderPage.html"><button class="btn btn-warning btn-sm"><i
+                      class="fa-solid fa-pen-to-square"></i></button></a>
+                <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Phạm Minh C</td>
+              <td>2024-11-23</td>
+              <td>Đà Nẵng, Việt Nam</td>
+              <td>Giường ngủ gỗ tự nhiên</td>
+              <td>7,800,000 VND</td>
+              <td><span class="badge" style="background-color: rgb(18, 245, 147);">Đã giao</span></td>
+              <td>
+                <a href="detailOrderPage.html"><button class="btn btn-info btn-sm"><i
+                      class="fa-solid fa-circle-info"></i></button></a>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Lê Thị D</td>
+              <td>2024-11-22</td>
+              <td>Cần Thơ, Việt Nam</td>
+              <td>Tủ quần áo 4 cánh</td>
+              <td>3,500,000 VND</td>
+              <td><span class="badge" style="background-color: rgb(18, 245, 147);">Đã giao</span></td>
+              <td>
+                <a href="detailOrderPage.html"><button class="btn btn-info btn-sm"><i
+                      class="fa-solid fa-circle-info"></i></button></a>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Nguyễn Thị E</td>
+              <td>2024-11-21</td>
+              <td>Hà Nội, Việt Nam</td>
+              <td>Kệ tivi phòng khách</td>
+              <td>2,200,000 VND</td>
+              <td><span class="badge bg-secondary">Chờ xác nhận</span></td>
+              <td>
+                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#confirmOrderModal"><i
+                    class="fa-solid fa-check"></i></button>
+                <a href="detailOrderPage.html"><button class="btn btn-info btn-sm"><i
+                      class="fa-solid fa-circle-info"></i></button></a>
+                <a href="editOrderPage.html"><button class="btn btn-warning btn-sm"><i
+                      class="fa-solid fa-pen-to-square"></i></button></a>
+                <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row row-table-bestselling ">
+        <h2 class="listorder " style="color: black;">Sản Phẩm Bán Chạy Trong Tháng</h2>
+        <div class="d-flex alldisplay">
+          <div class="col-md-6 recent" style="color: black;">Sản Phẩm Gần Đây</div>
+          <div class="col-md-6 align-items-end all" style=""> <a href="productsPage.html">Xem Tất Cả</a></div>
+        </div>
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>STT</th>
+              <th>Mã SP</th>
+              <th>Ảnh </th>
+              <th>Tên sản phẩm</th>
+              <th>Danh Mục</th>
+              <th>Danh Con</th>
+              <th>Giá</th>
+              <th>Bình luận</th>
+              <th>Ngày Tạo</th>
+              <th>Đã bán</th>
+              <th>Tùy chọn</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>SP001</td>
+              <td><img src="../assets/images/admin/avatarchair.jpg" alt="Image" style="width: 50px; height: 50px;"></td>
+              <!-- Thay # bằng ảnh -->
+              <td>Bàn làm việc</td>
+              <td>Bàn</td>
+              <td>Bàn Nội thất văn phòng</td>
+              <td>1,200,000</td>
+              <td>20</td>
+              <td>2023-01-10</td>
+
+              <td>25</td>
+              <td>
+                <!-- <button class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></button> -->
+                <a href="editProductPage.html"><button class="btn btn-warning btn-sm"><i
+                      class="fa-solid fa-pen-to-square"></i></button></a>
+                <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>SP002</td>
+              <td><img src="../assets/images/admin/avatarchair.jpg" alt="Image" style="width: 50px; height: 50px;"></td>
+              <!-- Thay # bằng ảnh -->
+              <td>Ghế xoay văn phòng</td>
+              <td>Ghế</td>
+              <td>Ghế văn phòng</td>
+              <td>1,000,000</td>
+              <td>10</td>
+
+              <td>2025-02-15</td>
+              <td>40</td>
+              <td>
+                <!-- <button class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></button> -->
+                <a href="editProductPage.html"><button class="btn btn-warning btn-sm"><i
+                      class="fa-solid fa-pen-to-square"></i></button></a>
+                <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>SP003</td>
+              <td><img src="../assets/images/admin/avatarchair.jpg" alt="Image" style="width: 50px; height: 50px;"></td>
+              <!-- Thay # bằng ảnh -->
+              <td>Giường ngủ gỗ</td>
+              <td>Giường </td>
+              <td>Giường ngủ</td>
+              <td>3,500,000</td>
+              <td>7</td>
+
+              <td>2026-03-05</td>
+              <td>15</td>
+              <td>
+                <!-- <button class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></button> -->
+                <a href="editProductPage.html"><button class="btn btn-warning btn-sm"><i
+                      class="fa-solid fa-pen-to-square"></i></button></a>
+                <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>SP004</td>
+              <td><img src="../assets/images/admin/avatarchair.jpg" alt="Image" style="width: 50px; height: 50px;"></td>
+              <!-- Thay # bằng ảnh -->
+              <td>Tủ quần áo</td>
+              <td>Tủ đồ</td>
+              <td>Tủ đồ mini</td>
+              <td>2,800,000</td>
+              <td>53</td>
+
+              <td>2025-01-20</td>
+              <td>20</td>
+              <td>
+                <!-- <button class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></button> -->
+                <a href="editProductPage.html"><button class="btn btn-warning btn-sm"><i
+                      class="fa-solid fa-pen-to-square"></i></button></a>
+                <button class="btn btn-danger btn-sm btn-delete "><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>SP005</td>
+              <td><img src="../assets/images/admin/avatarchair.jpg" alt="Image" style="width: 50px; height: 50px;"></td>
+              <!-- Thay # bằng ảnh -->
+              <td>Bàn ăn</td>
+              <td>Bàn</td>
+              <td>Bàn phòng bếp</td>
+              <td>1,500,000</td>
+              <td>24</td>
+
+              <td>2026-04-01</td>
+              <td>30</td>
+              <td>
+                <!-- <button class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></button> -->
+                <a href="editProductPage.html"><button class="btn btn-warning btn-sm"><i
+                      class="fa-solid fa-pen-to-square"></i></button></a>
+                <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/scriptAdmin.js"></script>
+
+</body>
+
+</html>

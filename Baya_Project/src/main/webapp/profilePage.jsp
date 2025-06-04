@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+    <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/layout/styleAdmin.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="fa-solid fa-border-all fa-lg"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="Dashboardadmin.jsp">Admin </a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item ">
+                    <a href="Dashboardadmin.jsp" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-house"></i>
+                        <div>Tổng Quan</div>
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="userPage.jsp" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-person"></i>
+                        <div>Danh Sách Người Dùng</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="productsPage.jsp" class="sidebar-link d-flex gap-3 ">
+                        <i class="fa-solid fa-chair"></i>
+                        <div>Danh Sách Sản Phẩm </div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="orderPageAdmin.jsp" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <div>Danh Sách Đơn Hàng</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="promotionPageAdmin.jsp" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-gift"></i>
+                        <div>Danh Sách Khuyến Mãi</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="newsPage.jsp" class="sidebar-link d-flex gap-3" id=" btn-logout ">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <div>Danh Sách Tin Tức</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#####" class="sidebar-link d-flex gap-3" id="btn-logout ">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div>Đăng Xuất</div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- phần main -->
+        <div class="container editorder-container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="adminPage.html"><i class="fa-solid fa-house "
+                                    style="margin:2px ;"></i>Tổng Quan</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Hồ Sơ</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row header-createorder">
+                <div class="col-12">
+                    <div class="title-createorder">
+                        Hồ Sơ
+                    </div>
+                </div>
+            </div>
+            <div class="row main-editorder main-profile ">
+                <form action="" method="get" class="d-flex">
+                    <div class=" editorder-left profile-left col-12">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form">
+                                <h4 class="form__title">Thông tin tài khoản</h4>
+
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Tên</label>
+                                    <input type="text" id="username" class="form-control" value="Tấn Kiệt"
+                                        placeholder="Tên">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">SĐT</label>
+                                    <input type="tel" id="phone" class="form-control" value="0123456789"
+                                        placeholder="Số điện thoại">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" class="form-control" value="admin@example.com"
+                                        placeholder="Email">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Địa chỉ</label>
+                                    <input type="text" id="address" class="form-control" value="Hà Nội, Việt Nam"
+                                        placeholder="Địa chỉ">
+                                </div>
+
+                                <button onclick="changeProfileAdmin()" class="btn btn-primary">Lưu thay đổi</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class=" editorder-right profile-right col-12">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form">
+                                <h4 class="form__title">Đổi mật khẩu</h4>
+
+                                <div class="mb-3">
+                                    <label for="oldpass" class="form-label">Mật khẩu hiện tại</label>
+                                    <input type="password" id="oldpass" class="form-control"
+                                        placeholder="Mật khẩu hiện tại">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="newpass" class="form-label">Mật khẩu mới</label>
+                                    <input type="password" id="newpass" class="form-control" placeholder="Mật khẩu mới"
+                                        minlength="8">
+                                    <small class="text-danger">* Phải từ 8 kí tự trở lên</small>
+                                </div>
+
+                                <div class="mb-3 ">
+                                    <label for="confirmpass" class="form-label">Xác nhận mật khẩu</label>
+                                    <input type="password" id="confirmpass" class="form-control"
+                                        placeholder="Xác nhận mật khẩu" minlength="8">
+                                    <small class="text-danger">* Phải từ 8 kí tự trở lên</small>
+                                </div>
+
+                                <button onclick="changePass()" class="btn btn-primary mt-3" style="margin-bottom: 30px;">Đổi mật khẩu</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row footer-addproduct">
+            </div>
+        </div>
+        <!-- end addproduct-container -->
+
+    </div>
+
+    <!-- Phần modal popup thông báo xác nhận xóa -->
+    <!-- Modal xác nhận xóa -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Xác Nhận Xóa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn xóa đơn hàng này không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Đồng Ý</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scriptAdmin.js"></script>
+</body>
+
+</html>

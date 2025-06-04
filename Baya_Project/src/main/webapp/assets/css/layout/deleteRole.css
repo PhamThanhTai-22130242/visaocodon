@@ -1,0 +1,47 @@
+.btn-hover-change {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(255, 193, 7);
+    color: white;
+    transition: background-color 0.4s ease;
+}
+
+.btn-hover-change:hover {
+    color: white;
+    background-color: rgb(220, 53, 69) !important;
+}
+
+.btn-hover-change span {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.btn-hover-change .default-text {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+}
+
+.btn-hover-change .hover-text {
+    transform: translateX(-100%) translateY(-50%);
+    opacity: 0;
+}
+
+.btn-hover-change:hover .default-text {
+    transform: translateX(100%) translateY(-50%);
+    opacity: 0;
+}
+
+.btn-hover-change:hover .hover-text {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+}
+
+.btn-hover-change {
+    height: 40px;
+    width: 100px;
+}

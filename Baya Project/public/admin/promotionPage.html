@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ADMIN</title>
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+       
+        <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../assets/css/styleAdmin.css">
+    </head>
+    
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="fa-solid fa-border-all fa-lg"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="adminPage.html">Admin</a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="adminPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-house"></i>
+                        <div>Tổng Quan</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="userPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-person"></i>
+                        <div>Danh Sách Người Dùng</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="productsPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-chair"></i>
+                        <div>Danh Sách Sản Phẩm</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="orderPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <div>Danh Sách Đơn Hàng</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="promotionPage.html" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-gift"></i>
+                        <div>Danh Sách Khuyến Mãi</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="newsPage.html" class="sidebar-link d-flex gap-3" id="btn-logout">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <div>Danh Sách Tin Tức</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#####" class="sidebar-link d-flex gap-3" id="btn-logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div>Đăng Xuất</div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Phần chính -->
+        <div class="container promotions-container">
+            <div class="row">
+                <nav aria-label="breadcrumb" class="promotionspage-breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="adminPage.html"><i class="fa-solid fa-house" style="margin:2px;"></i>Tổng Quan</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><i class="fa-solid fa-gift" style="margin:2px;"></i>Danh Sách Khuyến Mãi</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Header -->
+            <div class="row header-list">
+                <div class="col-md-4 left-header">
+                    <div class="col-12">
+                        <div class="name-table">Danh Sách Khuyến Mãi</div>
+                        <div class="d-flex quantity-container">
+                            <div class="" style="font-size: 1.2rem; font-weight: bold;">Số Lượng:</div>
+                            <div class="quantity-item badge bg-success">100</div>
+                            <div>Khuyến mãi</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 right-header">
+                    <div class="d-flex">
+                        <div class="dropdown sort-container justify-content-between align-items-center">
+                            <div class="d-flex">
+                                <div class="pt-1">Sắp Xếp Theo:</div>
+                                <button class="btn btn-sortlist" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-sort"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#" data-sort="asc">Mặc định</a></li>
+                                    <li><a class="dropdown-item" href="#" data-sort="desc">Theo tên</a></li>
+                                    <li><a class="dropdown-item" href="#" data-sort="asc">Theo ngày bắt đầu</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <form class="d-flex search-container">
+                            <input class="form-control custom-search me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                            <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nút thêm và xem khuyến mãi đã xóa -->
+            <div class="row button-center-container">
+                <div class="col-md-6 button-left">
+                    <button class="btn btn-light btn-primary" id="btn-add"><a href="createPromotionPage.html" style="color: #fff;">Tạo Khuyến Mãi</a></button>
+                </div>
+            </div>
+
+            <!-- Bảng danh sách khuyến mãi -->
+            <div class="row table-container">
+                <div class="col-12">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã Khuyến Mãi</th>
+                                <th>Tên Khuyến Mãi</th>
+                                <th>Mô Tả</th> <!-- Thêm cột Mô Tả -->
+                                <th>Ngày Bắt Đầu</th>
+                                <th>Ngày Kết Thúc</th>
+                                <th>Giảm Giá</th>
+                                <th>Tùy Chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 10 Khuyến mãi với mã khuyến mãi ảo -->
+                            <tr>
+                                <td>1</td>
+                                <td>KM001</td>
+                                <td>Giảm Giá Mùa Hè</td>
+                                <td>Khuyến mãi đặc biệt cho mùa hè, giảm giá các sản phẩm mùa hè.</td> <!-- Mô tả -->
+                                <td>01/06/2024</td>
+                                <td>30/06/2024</td>
+                                <td>7.000.000</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>KM002</td>
+                                <td>Khuyến Mãi Tết Nguyên Đán</td>
+                                <td>Giảm giá đặc biệt nhân dịp Tết Nguyên Đán, áp dụng cho tất cả sản phẩm.</td> <!-- Mô tả -->
+                                <td>01/01/2024</td>
+                                <td>31/01/2024</td>
+                                <td>15%</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>KM003</td>
+                                <td>Giảm Giá Sinh Nhật</td>
+                                <td>Giảm giá nhân dịp sinh nhật, áp dụng cho các sản phẩm nổi bật.</td> <!-- Mô tả -->
+                                <td>01/03/2024</td>
+                                <td>31/03/2024</td>
+                                <td>25%</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>KM004</td>
+                                <td>Giảm Giá Sinh Viên</td>
+                                <td>Khuyến mãi đặc biệt dành cho sinh viên, giảm giá cho các mặt hàng học tập.</td> <!-- Mô tả -->
+                                <td>01/05/2024</td>
+                                <td>31/05/2024</td>
+                                <td>10%</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>KM005</td>
+                                <td>Khuyến Mãi Đầu Năm</td>
+                                <td>Giảm giá đặc biệt đầu năm, áp dụng cho tất cả các sản phẩm trong cửa hàng.</td> <!-- Mô tả -->
+                                <td>01/01/2024</td>
+                                <td>15/01/2024</td>
+                                <td>30%</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>KM006</td>
+                                <td>Giảm Giá Giáng Sinh</td>
+                                <td>Khuyến mãi dịp Giáng Sinh, giảm giá lên đến 50% cho các sản phẩm mùa lễ hội.</td> <!-- Mô tả -->
+                                <td>01/12/2024</td>
+                                <td>31/12/2024</td>
+                                <td>50%</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>KM007</td>
+                                <td>Giảm Giá Tết Trung Thu</td>
+                                <td>Giảm giá sản phẩm đặc biệt cho Tết Trung Thu, áp dụng cho các mặt hàng bánh trung thu.</td> <!-- Mô tả -->
+                                <td>01/09/2024</td>
+                                <td>30/09/2024</td>
+                                <td>10%</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>KM008</td>
+                                <td>Khuyến Mãi Black Friday</td>
+                                <td>Giảm giá cực lớn nhân dịp Black Friday, lên đến 40% cho các mặt hàng công nghệ.</td> <!-- Mô tả -->
+                                <td>01/11/2024</td>
+                                <td>30/11/2024</td>
+                                <td>40%</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>KM009</td>
+                                <td>Giảm Giá Lễ Quốc Khánh</td>
+                                <td>Khuyến mãi đặc biệt trong dịp lễ Quốc Khánh, giảm giá cho các sản phẩm quà tặng.</td> <!-- Mô tả -->
+                                <td>01/09/2024</td>
+                                <td>03/09/2024</td>
+                                <td>5%</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>KM010</td>
+                                <td>Giảm Giá Mua 1 Tặng 1</td>
+                                <td>Khuyến mãi Mua 1 Tặng 1, áp dụng cho tất cả sản phẩm trong cửa hàng.</td> <!-- Mô tả -->
+                                <td>01/06/2024</td>
+                                <td>30/06/2024</td>
+                                <td>100%</td>
+                                <td>
+                                    <a href="editPromotionPage.html"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                    <button class="btn btn-danger btn-sm btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+            <div class="row pagination-container">
+                <div class="col-md-6 pagination-left">
+    
+                </div>
+                <div class="col-md-6 pagination-right d-flex justify-content-end">
+                    <table>
+                        <tr>
+                          <td colspan="10">
+                            <nav aria-label="Page navigation">
+                              <ul class="pagination justify-content-end pagination-menu">
+                                <li class="page-item"><a class="page-link" href="#">Trước</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+                              </ul>
+                            </nav>
+                          </td>
+                        </tr>
+                </table>
+                </div>
+              </div>      
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/scriptAdmin.js"></script>
+</body>
+
+</html>

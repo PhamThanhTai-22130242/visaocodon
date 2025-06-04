@@ -1,0 +1,272 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: PHAMTAI
+  Date: 1/10/2025
+  Time: 12:39 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bài viết</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/reset/reset.css">
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" href="./assets/css/layout/modal.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/layout/backToTop.css">
+    <link rel="stylesheet" href="./assets/css/pages/home.css">
+    <link rel="stylesheet" href="./assets/css/layout/header.css">
+    <link rel="stylesheet" href="./assets/css/layout/footer.css">
+    <link rel="shortcut icon" href="./assets/images/favicons/favicon_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/layout/modal.css">
+    <link rel="stylesheet" href="./assets/css/pages/article.css">
+    <link rel="stylesheet" href="./assets/css/pages/productDetail.css">
+
+    <link rel="stylesheet" href="./assets/css/pages/productSearch.css">
+    <link rel="stylesheet" href="./assets/css/layout/breadcrumb.css">
+
+
+</head>
+<style>
+    .article_alpha{
+        overflow: hidden;
+        width: 100% !important;
+    }
+</style>
+<body>
+
+<jsp:include page="SharedViews/header.jsp" />
+
+<div class="body_home">
+    <div class="main_container ">
+
+
+        <div class="breadcrumb">
+            <ul>
+                <li> <a href="">Ghế</a> </li>
+                <li>/</li>
+                <li><a href="">Ghế Sofa</a></li>
+            </ul>
+        </div>
+        <div class="article_page">
+
+
+            <div class="article_alpha bg-while">
+                ${news.content}
+            </div>
+
+<%--            <div class="article_beta bg-while">--%>
+
+
+<%--                <aside class="sidebar">--%>
+<%--                    <h2>Các bài viết khác</h2>--%>
+<%--                    <c:forEach items="${newsList}" var="item">--%>
+<%--                        <ul class="most-read">--%>
+<%--                            <li>--%>
+<%--                                <a href="/articleDetail?id=${item.newsID}" class="item_article">--%>
+
+<%--                                    <img class=""--%>
+<%--                                         src="${item.thumbnail}"--%>
+<%--                                         alt="">--%>
+<%--                                    <div class="item_article-title">--%>
+
+
+<%--                                        <h3>${item.title}</h3>--%>
+
+
+<%--                                    </div>--%>
+<%--                                </a>--%>
+<%--                            </li>--%>
+
+
+<%--                        </ul>--%>
+<%--                    </c:forEach>--%>
+
+
+<%--                </aside>--%>
+<%--            </div>--%>
+        </div>
+    </div>
+
+</div>
+<div class="footer">
+    <div class="footer-top">
+        <div class="newsletter">
+            <p>Đăng ký nhận tin</p>
+            <div class="newsletter-input">
+                <input type="email" placeholder="Nhập email của bạn">
+                <button>ĐĂNG KÝ</button>
+            </div>
+        </div>
+        <div class="social">
+            <p>Kết nối với chúng tôi</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>CÔNG TY NỘI THẤT BAYA</h3>
+            <ul>
+
+                <li>Thương hiệu nội thất và trang trí hàng đầu Việt Nam, góp phần xây dựng thêm nhiều tổ ấm mỗi
+                    ngày.
+                </li>
+                <li><i class="fa-solid fa-location-dot"></i> Tầng 08, Tòa nhà Pearl Plaza, Số 561A
+                    Điện Biên
+                    Phủ,
+                    Phường 25, Quận Bình Thạnh, Thành phố Hồ
+                    Chí Minh </li>
+                <li><i class="fa-solid fa-phone"></i> 1900 63 64 76</li>
+                <li><i class="fa-solid fa-envelope"></i> webshop@baya.vn</li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>VỀ BAYA</h3>
+            <ul>
+                <li><a href="introduce.html"><i class="fa-solid fa-circle icon-small"></i>Giới thiệu</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-circle icon-small"></i>Liên hệ</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Blog</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Hệ thống cửa hàng</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Câu hỏi thường gặp</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Hướng dẫn đặt hàng</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Mua hàng trả góp</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Hướng dẫn thanh toán VNPAY-QR</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>CHÍNH SÁCH</h3>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small "></i>Chính sách bảo hành</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Chi phí vận chuyển</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Chính sách đổi trả và hoàn tiền</a>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Chính sách vận chuyển</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Các hình thức thanh toán</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle icon-small"></i>Chính sách bảo mật thông tin</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2024 Baya. Powered by Nhóm 1</p>
+    </div>
+
+
+</div>
+<div class="modal" id="modal">
+    <div class="modal_overlay" onclick="closeCategory()">
+
+    </div>
+    <div class="modal_body-category">
+        <div class="top_menu">
+            <ul>
+                <li>
+                    <div class="menu_category" data-category="phong-lam-viec">
+                        <p>Phòng làm việc</p>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu_category" data-category="phong-khach">
+                        <p>Phòng khách</p>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu_category" data-category="phong-ngu">
+                        <p>Phòng ngủ</p>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu_category" data-category="tu-bep">
+                        <p>Tủ bếp</p>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu_category" data-category="phong-an">
+                        <p>Phòng ăn</p>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="sub_category_wrapper">
+            <div class="category_list" id="phong-lam-viec">
+                <a class="category-item" href="productSearch.html">
+
+                    <img src="https://product.hstatic.net/200000065946/product/pro_nau_noi_that_moho_ghe_bdc5094c1d0a4520b209c54ea88e10ba_master.jpg"
+                         alt="img">
+                    <p>Bàn làm việc</p>
+
+                </a>
+                <a class="category-item" href="productSearch.html">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG-buIdH3shs3NaAiqPwff0BSvhRDRVGKfaA&s"
+                         alt="img">
+                    <p>Ghế văn phòng</p>
+
+                </a>
+                <a class="category-item" href="productSearch.html">
+
+                    <img src="https://product.hstatic.net/200000065946/product/pro_nau_noi_that_moho_ghe_bdc5094c1d0a4520b209c54ea88e10ba_master.jpg"
+                         alt="img">
+                    <p>Tủ-kệ</p>
+
+                </a>
+
+
+            </div>
+            <div class="category_list" id="phong-khach">
+                <a class="category-item" href="productSearch.html">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG-buIdH3shs3NaAiqPwff0BSvhRDRVGKfaA&s"
+                         alt="img">
+                    <p>Ghế Sofa</p>
+
+                </a>
+                <a class="category-item" href="productSearch.html">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG-buIdH3shs3NaAiqPwff0BSvhRDRVGKfaA&s"
+                         alt="img">
+                    <p>Bàn </p>
+
+                </a>
+            </div>
+            <div class="category_list" id="phong-ngu">
+
+            </div>
+            <div class="category_list" id="tu-bep">
+
+            </div>
+            <div class="category_list" id="phong-an">
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./assets/js/modal.js"></script>
+
+</html>

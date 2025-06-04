@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/fontawesome.min.js">
+    <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/layout/styleAdmin.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="fa-solid fa-border-all fa-lg"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="Dashboardadmin.jsp">Admin </a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item ">
+                    <a href="Dashboardadmin.jsp" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-house"></i>
+                        <div>Tổng Quan</div>
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="userPage.jsp" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-person"></i>
+                        <div>Danh Sách Người Dùng</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="productsPage.jsp" class="sidebar-link d-flex gap-3 ">
+                        <i class="fa-solid fa-chair"></i>
+                        <div>Danh Sách Sản Phẩm </div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="orderPageAdmin.jsp" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <div>Danh Sách Đơn Hàng</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="promotionPageAdmin.jsp" class="sidebar-link d-flex gap-3">
+                        <i class="fa-solid fa-gift"></i>
+                        <div>Danh Sách Khuyến Mãi</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="newsPage.jsp" class="sidebar-link d-flex gap-3" id="btn-logout">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <div>Danh Sách Tin Tức</div>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#####" class="sidebar-link d-flex gap-3" id="btn-logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div>Đăng Xuất</div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- phần main -->
+        <div class="container addproduct-container createorder-container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="adminPage.html"><i class="fa-solid fa-house "
+                                    style="margin:2px ;"></i>Tổng Quan</a></li>
+                        <li class="breadcrumb-item"><a href="orderPageAdmin.jsp"> <i class="fa-solid fa-file-invoice-dollar"
+                                                                                     style="margin:2px ;"></i> Danh Sách Đơn Hàng</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Tạo Đơn Hàng</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row header-createorder">
+                <div class="col-12">
+                    <div class="title-createorder">
+                        Tạo Đơn Hàng
+                    </div>
+                </div>
+            </div>
+            <div class="row main-createorder ">
+                <form action="" method="" class="d-flex">
+                    <div class="createorder-left col-12">
+                        <div class="mb-2">
+                            <h4 class="form-title">Thông Tin Khách Hàng</h4>
+                            <label for="usernameRE" class="form-label">Người Nhận</label>
+                            <input type="text" class="form-control input-size-createorder color-input" id="usernameRE"
+                                name="usernameRE" required placeholder="Tên người nhận">
+                        </div>
+                        <div class="mb-2">
+                            <label for="phoneRE" class="form-label">SĐT Người Nhận</label>
+                            <input type="text" class="form-control input-size-createorder color-input" id="phoneRE" name="phoneRE"
+                                required maxlength="10" placeholder="Số điện thoại người nhận">
+                        </div>
+                        <div class="mb-2">
+                            <label for="mailRE" class="form-label">Email Người Nhận</label>
+                            <input type="email" class="form-control input-size-createorder color-input" id="mailRE" name="mailRE"
+                                placeholder="Email người nhận">
+                        </div>
+                        <div class="mb-3">
+                            <label for="note" class="form-label">Ghi Chú Đơn Hàng</label>
+                            <input type="text" class="form-control input-size-createorder color-input" style=" width: 50%; height: 100px; /* Đặt độ rộng là 100% */
+                            padding: 10px; /* Thêm padding nếu cần */
+                            font-size: 16px; " id="note" name="note" placeholder="Lời nhắn, yêu cầu đặc biệt">
+                        </div>
+
+                    </div>
+                    <div class="createorder-right col-12">
+                        <div class="mb-2">
+                            <h4 class="form-title">Thông Tin Giao Hàng</h4>
+                            <label for="dayE" class="form-label">Ngày Lập Đơn</label>
+                            <input type="datetime-local" class="form-control input-size-createorder color-input" id="dayE"
+                                name="dayE" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="dayD" class="form-label">Ngày Giao</label>
+                            <input type="datetime-local" class="form-control input-size-createorder color-input" id="dayD"
+                                name="dayD" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="address" class="form-label">Địa Chỉ Giao</label>
+                            <input type="text" class="form-control input-size-createorder color-input" id="address" name="address"
+                                required placeholder="Địa chỉ giao hàng">
+                        </div>
+                        <div class="mb-2">
+                            <label for="status" class="form-label">Trạng Thái Đơn Hàng</label>
+                            <select class="form-control input-size-createorder color-input" id="status" name="status" required>
+                                <option value="0">Chờ Xử Lý</option>
+                                <option value="1">Đang Giao</option>
+                                <option value="2">Đã Giao</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row mt-3 custom-dropdown-editorder-container">
+                <div class="custom-dropdown-editorder">
+                    <button id="dropdownMenuButton" class="btn btn-outline-primary bg-primary">
+                        Chọn sản phẩm <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <div class="dropdown-menu-editorder" id="dropdownMenu">
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product1-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 1" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Ghế sắt</h5>
+                                <span class="quantity">Số lượng: 10</span>
+                            </div>
+                        </label>
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product2-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 2" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Bàn</h5>
+                                <span class="quantity">Số lượng: 15</span>
+                            </div>
+                        </label>
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product3-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 3" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Đèn Ngủ</h5>
+                                <span class="quantity">Số lượng: 8</span>
+                            </div>
+                        </label>
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product4-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 4" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Đèn treo tường</h5>
+                                <span class="quantity">Số lượng: 20</span>
+                            </div>
+                        </label>
+                        <label class="dropdown-item-editorder">
+                            <input type="checkbox" id="product5-checkbox">
+                            <img src="https://via.placeholder.com/50" alt="Sản phẩm 5" class="product-img-editorder">
+                            <div class="product-info-editorder">
+                                <h5>Thảm nhựa</h5>
+                                <span class="quantity">Số lượng: 5</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 addproduct-createorder">
+                <div class="col-12">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã SP</th>
+                                <th>Ảnh </th>
+                                <th>Tên sản phẩm</th>
+                                <th>Đơn Giá </th>
+                                <th>Số Lượng</th>
+                                <th>Thành Tiền</th>
+                                <th>Tùy chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row button-createorder-container mt-4 mb-4">
+                <div class="col-12 mt-3 mb-3">
+                    <button type="submit" class="btn btn-success btn-light " style="color: white;"
+                        id="btn-createorder">Tạo Đơn Hàng</button>
+                </div>
+            </div>
+
+            <div class="row footer-addproduct">
+            </div>
+        </div>
+        <!-- end addproduct-container -->
+
+    </div>
+    <!-- Phần modal popup thông báo thêm -->
+    <!-- Modal Thêm sản phẩm-->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProductModalLabel">Thêm Sản Phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="msp" class="form-label">Mã Sản Phẩm</label>
+                        <input type="text" class="form-control" id="msp" name="msp" required
+                            placeholder="Vui lòng nhập mã sản phẩm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Tên Sản Phẩm</label>
+                        <input type="text" class="form-control" id="productName" name="productName" required
+                            placeholder="Tên sản phẩm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="slg" class="form-label">Số Lượng</label>
+                        <input type="number" class="form-control" id="slg" name="slg" value="1" min="1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productNote" class="form-label">Ghi Chú</label>
+                        <input type="text" class="form-control" id="productNote" name="productNote"
+                            placeholder="Lời chúc, yêu cầu thêm...">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="addProductBtn">Thêm Sản Phẩm</button>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/scriptAdmin.js"></script>
+</body>
+
+</html>
