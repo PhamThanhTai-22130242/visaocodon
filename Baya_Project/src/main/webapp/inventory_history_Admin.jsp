@@ -109,7 +109,6 @@
             </table>
 
             <div class="d-flex justify-content-start mt-3 gap-2">
-
                 <%
                     UserPrincipal user = (UserPrincipal) request.getSession().getAttribute("user");
                     if (user.hasPermission("warehouseHistories","exportPDF")){
@@ -120,7 +119,7 @@
 
                 <% } %>
                 <%
-                    if (user.hasPermission("warehouseHistories","exportExel")){
+                    if (user.hasPermission("warehouseHistories","exportEcxel")){
                 %>
                 <button class="btn btn-success btn-export-excel">
                     <i class="fa-solid fa-file-excel"></i> Excel

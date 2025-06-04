@@ -48,14 +48,12 @@ public class EditCategory extends HttpServlet {
             response.getWriter().write("error");
             return;
         }
-
         CategoryDao categoryDao = new CategoryDao();
         Category oldCategory = categoryDao.selectById(categoryID);
         if (oldCategory == null) {
             response.getWriter().write("error");
             return;
         }
-
         Part filePart = request.getPart("thumail");
         String thumbnailBase64;
 

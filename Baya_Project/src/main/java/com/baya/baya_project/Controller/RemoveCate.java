@@ -17,7 +17,6 @@ public class RemoveCate extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         String message = null;
-
         if ("delete".equals(action)) {
             String id = request.getParameter("id");
 
@@ -41,5 +40,6 @@ public class RemoveCate extends HttpServlet {
         }
 
         request.setAttribute("message", message);
+        request.getRequestDispatcher("/admin/categories/view").forward(request, response);
     }
 }

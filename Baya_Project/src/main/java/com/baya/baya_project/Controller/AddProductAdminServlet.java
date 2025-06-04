@@ -1,6 +1,7 @@
 package com.baya.baya_project.Controller;
 
 import com.baya.baya_project.Model.User;
+import com.baya.baya_project.Model.UserPrincipal;
 import com.google.gson.Gson;
 import com.baya.baya_project.Model.ProductExcel;
 import com.baya.baya_project.service.*;
@@ -17,7 +18,7 @@ public class AddProductAdminServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession();
-        User admin = (User) session.getAttribute("user");
+        UserPrincipal admin = (UserPrincipal) session.getAttribute("user");
         try {
             req.setCharacterEncoding("UTF-8");
             resp.setContentType("application/json;charset=UTF-8");
@@ -34,7 +35,7 @@ public class AddProductAdminServlet extends HttpServlet {
                 JsonObject json = new JsonObject();
                 json.addProperty("message", "Thêm sản phẩm thành công.");
                 logService.infor(
-                        admin.getUserID(),
+                        admin.getUser().getUserID(),
                         "Thêm Sản phẩm",
                         "Mã sản phẩm: " + product.getCode() + " chưa có trong cơ sở dữ liệu.",
                         "Mã sản phẩm: " + product.getCode() + " đã được thêm thành công.");

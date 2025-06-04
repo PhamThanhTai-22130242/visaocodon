@@ -1,6 +1,7 @@
 package com.baya.baya_project.ViewAdmin;
 
 import com.baya.baya_project.Dao.UserDAO;
+import com.baya.baya_project.Model.UserPrincipal;
 import com.baya.baya_project.service.UserAdminService;
 import com.baya.baya_project.service.LogService;
 import com.baya.baya_project.Model.User;
@@ -24,7 +25,7 @@ public class UserPageAdmin extends HttpServlet {
         UserAdminService userAdminService = new UserAdminService();
         LogService logService = new LogService();
         HttpSession session = request.getSession();
-        User admin = (User) session.getAttribute("user");
+        UserPrincipal admin = (UserPrincipal) session.getAttribute("user");
 
         String action = request.getParameter("action");
         int id = Integer.parseInt(request.getParameter("id"));
@@ -34,7 +35,7 @@ public class UserPageAdmin extends HttpServlet {
                 userAdminService.deleteUser(id);
                 request.setAttribute("message", "Xóa người dùng thành công.");
 
-                logService.danger(admin.getUserID(), "Trang quản lý người dùng", "ID người dùng: " + id, "Đã xóa người dùng");
+                logService.danger(admin.getUser().getUserID(), "Trang quản lý người dùng", "ID người dùng: " + id, "Đã xóa người dùng");
             } catch (Exception e) {
                 request.setAttribute("message", "Đã xảy ra lỗi khi xóa người dùng: " + e.getMessage());
             }
@@ -44,7 +45,7 @@ public class UserPageAdmin extends HttpServlet {
                 userAdminService.banned(id);
                 request.setAttribute("message", "Cấm người dùng đánh giá/bình luận thành công.");
 
-                logService.warning(admin.getUserID(), "Trang quản lý người dùng", "ID người dùng: " + id, "Cấm đánh giá/bình luận");
+                logService.warning(admin.getUser().getUserID(), "Trang quản lý người dùng", "ID người dùng: " + id, "Cấm đánh giá/bình luận");
             } catch (Exception e) {
                 request.setAttribute("message", "Đã xảy ra lỗi khi cấm người dùng đánh giá/bình luận: " + e.getMessage());
             }
@@ -54,7 +55,7 @@ public class UserPageAdmin extends HttpServlet {
                 userAdminService.Unbanned(id);
                 request.setAttribute("message", "Bỏ cấm người dùng đánh giá/bình luận thành công.");
 
-                logService.infor(admin.getUserID(), "Trang quản lý người dùng", "ID người dùng: " + id, "Bỏ cấm đánh giá/bình luận");
+                logService.infor(admin.getUser().getUserID(), "Trang quản lý người dùng", "ID người dùng: " + id, "Bỏ cấm đánh giá/bình luận");
             } catch (Exception e) {
                 request.setAttribute("message", "Đã xảy ra lỗi khi bỏ cấm người dùng đánh giá/bình luận: " + e.getMessage());
             }

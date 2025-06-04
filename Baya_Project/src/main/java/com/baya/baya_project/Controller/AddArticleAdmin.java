@@ -17,7 +17,6 @@ import java.util.Base64;
 @WebServlet(name = "AddArticle", value = "/admin/news/create/addArticle")
 @MultipartConfig
 public class AddArticleAdmin extends HttpServlet {
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,7 +35,6 @@ public class AddArticleAdmin extends HttpServlet {
             if (thumbnailPart != null && thumbnailPart.getSize() > 0) {
                 thumbnailBase64 = convertToBase64(thumbnailPart);
             }
-
             News news = new News();
             news.setTitle(title);
             news.setContent(content);
@@ -47,9 +45,6 @@ public class AddArticleAdmin extends HttpServlet {
             int insert = newsDao.insert(news);
 
             if (insert >= 1) {
-
-
-
                 String location = "Admin - Thêm Tin Tức";
                 String afterData = "Tiêu đề: " + title + ", Loại tin: " + newsTypeID;
                 LogService logService = new LogService();

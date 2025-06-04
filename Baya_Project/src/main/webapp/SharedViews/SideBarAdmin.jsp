@@ -34,7 +34,7 @@
             <a href="/admin/users/view" class="sidebar-link d-flex gap-3">
                 <i class="fa-solid fa-person"></i>
 
-                <div>Quản lí nguời dùng</div>
+                <div>Quản lí người dùng</div>
 
             </a>
         </li>
@@ -69,14 +69,7 @@
             </a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-                <i class="icon-columns menu-icon"></i>
-                <span class="menu-title">Quản lí người dùng</span>
-                <i class="menu-arrow"></i>
-            </a>
 
-        </li>
 
 
 
