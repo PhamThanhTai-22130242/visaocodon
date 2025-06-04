@@ -90,8 +90,9 @@ public class ListProductAdminController extends HttpServlet {
             try {
                 String id = request.getParameter("id");
                 productAdminService.deleteProduct(id);
-
-                int userID = (int) request.getSession().getAttribute("userID");
+                HttpSession session = request.getSession();
+                UserPrincipal admin = (UserPrincipal) session.getAttribute("user");
+                int userID = admin.getUser().getUserID();
                 logService.infor(userID, "Xóa sản phẩm", "Product ID: " + id, "Đã xóa sản phẩm với ID: " + id);
 
                 request.setAttribute("message", "Xóa sản phẩm thành công.");

@@ -113,7 +113,7 @@ public class EditProductAdmin extends HttpServlet {
         ProductAdminService.updateProduct(productListImg);
 
         HttpSession session = request.getSession(true);
-        User user = (User) session.getAttribute("auth");
+        UserPrincipal admin = (UserPrincipal) session.getAttribute("user");
 
         response.sendRedirect("ListProductAdmin?success=1");
     }

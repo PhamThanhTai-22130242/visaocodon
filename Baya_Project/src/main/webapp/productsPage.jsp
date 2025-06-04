@@ -7,35 +7,35 @@
 <html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ADMIN</title>
-  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/assets/css/layout/styleAdmin.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/68512d5542.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/layout/styleAdmin.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <style>
-    <jsp:include page="SharedViews/block_error.jsp" />
-  </style>
-</head>
+    <style>
+      <jsp:include page="SharedViews/block_error.jsp" />
+    </style>
+  </head>
 
 <body>
 
@@ -154,55 +154,55 @@
 
 
         </div>
-<style>
-  .search-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Đẩy các phần tử sang phải */
-    width: 100%;
-  }
+        <style>
+          .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Đẩy các phần tử sang phải */
+            width: 100%;
+          }
 
-  .search-input {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: 1px solid #ccc;
-    padding-right: 30px; /* Khoảng trống cho nút "x" */
-  }
+          .search-input {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            border: 1px solid #ccc;
+            padding-right: 30px; /* Khoảng trống cho nút "x" */
+          }
 
-  .search-btn {
-    margin-left: 10px;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-  }
+          .search-btn {
+            margin-left: 10px;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+          }
 
-  .search-input:focus {
-    border-color: #007bff;
-    outline: none;
-  }
+          .search-input:focus {
+            border-color: #007bff;
+            outline: none;
+          }
 
-  .search-btn .fa-solid {
-    font-size: 1.2rem;
-  }
+          .search-btn .fa-solid {
+            font-size: 1.2rem;
+          }
 
-  .search-container .btn-clear {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 18px;
-    color: #aaa; /* Đảm bảo rằng nút x có màu dễ nhìn */
-    cursor: pointer;
-  }
+          .search-container .btn-clear {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #aaa; /* Đảm bảo rằng nút x có màu dễ nhìn */
+            cursor: pointer;
+          }
 
-  .search-container .btn-clear:hover {
-    color: #007bff; /* Chỉnh màu khi hover */
-  }
+          .search-container .btn-clear:hover {
+            color: #007bff; /* Chỉnh màu khi hover */
+          }
 
 
-</style>
+        </style>
       </div>
     </div>
     <div class="row button-center-container">
@@ -211,12 +211,12 @@
 
         <c:choose>
           <c:when test="${canCreate}">
-            <form action="ImportExcelProduct" method="post" enctype="multipart/form-data" id="excelImportForm">
+            <form action="/ImportExcelProduct" method="post" enctype="multipart/form-data" id="excelImportForm">
               <input type="file" name="excelFile" id="excelFile" style="display: none;" accept=".xls,.xlsx">
               <button type="button" class="btn btn-success">
                 <i class="fa-solid fa-file-excel me-2"></i>Import Excel
               </button>
-              <button class="btn btn-light btn-primary" id="btn-add"><a href="addProductPage.jsp" style="color: #fff;">Thêm
+              <button class="btn btn-light btn-primary" id="btn-add"><a href="/addProductPage.jsp" style="color: #fff;">Thêm
                 Sản Phẩm</a></button>
             </form>
 
@@ -292,7 +292,7 @@
 
               <c:choose>
                 <c:when test="${canUpdate}">
-                  <a href="EditProduct?id=<%=pro.getProduct().getProductID()%>">
+                  <a href="/EditProduct?id=<%=pro.getProduct().getProductID()%>">
                     <button class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
                   </a>
 
