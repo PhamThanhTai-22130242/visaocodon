@@ -19,15 +19,15 @@ public class AuthorizationFilter implements Filter {
             throws IOException, ServletException {
 
         HttpSession session = ((HttpServletRequest) req).getSession();
-        PermissionDao permissionDao = new PermissionDao();
-        UserDAO dao = new UserDAO();
-        User user = dao.getUserById(30);
-        Set<String> permissions = permissionDao.getPermissionsByUserId(30);
-        UserPrincipal principal = new UserPrincipal();
-        principal.setUser(user);
-        principal.setPermissions(permissions);
-        System.out.println("USER PRINCICAL: " + principal);
-        session.setAttribute("user", principal);
+//        PermissionDao permissionDao = new PermissionDao();
+//        UserDAO dao = new UserDAO();
+//        User user = dao.getUserById(42);
+//        Set<String> permissions = permissionDao.getPermissionsByUserId(42);
+//        UserPrincipal principal = new UserPrincipal();
+//        principal.setUser(user);
+//        principal.setPermissions(permissions);
+//        System.out.println("USER PRINCICAL: " + principal);
+//        session.setAttribute("user", principal);
 //        chain.doFilter(req, res);
 
 
@@ -39,7 +39,7 @@ public class AuthorizationFilter implements Filter {
             return;
         }
 
-//        UserPrincipal principal = (UserPrincipal) session.getAttribute("user");
+        UserPrincipal principal = (UserPrincipal) session.getAttribute("user");
         System.out.println("principal : " + principal);
         System.out.println("filter per");
         boolean isAjax = "XMLHttpRequest".equals(request.getHeader("X-Requested-With"));
@@ -89,7 +89,7 @@ public class AuthorizationFilter implements Filter {
        } catch (Exception e) {
 
             System.out.println("try catch");
-            e.printStackTrace();
+
 
             if (!response.isCommitted()) {
                 response.sendRedirect("/error-404.jsp");
@@ -97,6 +97,7 @@ public class AuthorizationFilter implements Filter {
                 // Ghi log nếu response đã commit để không bị mất thông tin
                 System.err.println("Response has already been committed. Cannot redirect.");
             }
+
         }
 
     }

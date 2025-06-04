@@ -38,7 +38,7 @@
 <jsp:include page="SharedViews/header.jsp"/>
 
 <div class="body_home">
-    <div onclick="checkEmailExist(1)">Check email</div>
+<%--    <div onclick="checkEmailExist(1)">Check email</div>--%>
     <div class="form">
         <div class="block_img">
             <img src="./assets/images/logo/logo-baya.png" alt="img">

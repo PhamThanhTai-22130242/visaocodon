@@ -47,7 +47,7 @@
         <div class="block_login">
             <a href="https://accounts.google.com/o/oauth2/auth?scope=email profile openid
 
-&redirect_uri=http://localhost:8080/loginGoogleHandler
+&redirect_uri=https://bayastore.id.vn/loginGoogleHandler
 
 &response_type=code
 
@@ -60,7 +60,7 @@
             <a href="https://www.facebook.com/v20.0/dialog/oauth?
 client_id=1107088940891688
 
-&redirect_uri=http://localhost:8080/loginFacebookHandler" class="login-fb">
+&redirect_uri=https://bayastore.id.vn/loginFacebookHandler" class="login-fb">
                 <img class="" src="./assets/images/logo/facebook-logo.webp" alt="logo-google">
                 <p>Facebook</p>
             </a>
@@ -153,11 +153,11 @@ client_id=1107088940891688
             document.getElementById('error_text').innerHTML = 'Email không hợp lệ';
             return false
         }
-        // if (isCaptchaVerified == false) {
-        //     document.getElementById('block_error').style.display = 'flex';
-        //     document.getElementById('error_text').innerHTML = 'Captcha chưa thành công';
-        //     return false
-        // }
+        if (isCaptchaVerified == false) {
+            document.getElementById('block_error').style.display = 'flex';
+            document.getElementById('error_text').innerHTML = 'Captcha chưa thành công';
+            return false
+        }
         else {
 
             return true;

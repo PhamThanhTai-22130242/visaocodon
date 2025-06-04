@@ -12,9 +12,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-@WebServlet(name = "ActivateForgetPassword", value = "/activateForgetPassword")
-public class ActivateForgetPassword extends HttpServlet {
-    public final int IS_ACTIVE = 1;
+@WebServlet(name = "ActiPasswNoEmail", value = "/actiPasswNoEmail")
+public class ActiPasswNoEmail extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String activeTokens = request.getParameter("tokens");
@@ -25,15 +24,13 @@ public class ActivateForgetPassword extends HttpServlet {
         User user = userDAO.findUserByEmail(email);
         System.out.println(activeTokens);
         int typeChange = Integer.parseInt(request.getParameter("type"));
-        int type = -1;
-        String message;
         if (activeTokens == null || activeTokens.isEmpty()) {
             response.sendRedirect("/errorTokens");
             log.alert(user.getUserID(), "Tokens Quên mật khẩu", "Nhận tokens", "Tokens không tồn tại");
             return;
         }
         else{
-            if(typeChange==1 & user== null){
+            if(user == null){
                 request.setAttribute("type", 8);
                 request.getRequestDispatcher("/resultRegister.jsp").forward(request, response);
                 return;
@@ -43,8 +40,9 @@ public class ActivateForgetPassword extends HttpServlet {
                 LocalDateTime timeCreated = userDAO.getTimeActiveMail(email);
                 if (Duration.between(now, timeCreated).toHours() < 24) {
                     if (userDAO.updateCreateAt(now, email) > 0) {
+                        request.setAttribute("email", email);
                         log.warning(user.getUserID(), "Tokens Quên mật khẩu", "Nhận tokens", "Thay đổi mật khẩu thành công");
-                        request.getRequestDispatcher("/ForgetPasswordC.jsp").forward(request, response);
+                        request.getRequestDispatcher("/ActivateNoPass.jsp").forward(request, response);
                         return;
                     }
                 } else {
@@ -55,7 +53,6 @@ public class ActivateForgetPassword extends HttpServlet {
                 }
             }
         }
-
     }
 
     @Override

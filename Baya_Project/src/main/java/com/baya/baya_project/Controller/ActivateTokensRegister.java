@@ -28,6 +28,7 @@ public class ActivateTokensRegister extends HttpServlet {
         User user = userDAO.findUserByEmail(email);
         int type = -1;
         String message;
+
         if (activeTokens == null || activeTokens.isEmpty()) {
             response.sendRedirect("/errorTokens");
             log.alert(user.getUserID(), "Tokens kích hoạt tài khoản", "Nhận tokens", "Tokens không tồn tại");
