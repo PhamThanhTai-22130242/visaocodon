@@ -219,7 +219,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-        <form action="${pageContext.request.contextPath}/contactAd" method="post" style="display:inline;">
+        <form action="${pageContext.request.contextPath}/admin/contacts/view" method="post" style="display:inline;">
           <input type="hidden" name="action" value="delete"/>
           <input type="hidden" name="id" id="contactIdToDelete"/>
           <button type="submit" class="btn btn-danger">Đồng ý</button>

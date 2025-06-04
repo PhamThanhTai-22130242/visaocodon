@@ -958,7 +958,6 @@
                 formData.append("thumbnail", thumbnailFile);
             }
             console.log('formData', formData)
-
             openLoading();
             $.ajax({
                 url: "/admin/news/create/addArticle",
@@ -982,11 +981,12 @@
                     }
                 },
                 error: function (xhr) {
+
+                    const res = JSON.parse(xhr.responseText);
                     if (xhr.status === 401) {
                         window.location.href = "/login.jsp";
                         return;
                     }
-                    const res = JSON.parse(xhr.responseText);
                     Swal.fire({
                         title: "Lỗi!",
                         text: res.message || "Có lỗi xảy ra!",
@@ -995,6 +995,7 @@
                     });
                 }
             });
+            closeLoading();
         });
     });
 

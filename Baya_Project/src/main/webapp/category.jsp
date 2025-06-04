@@ -337,7 +337,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
             </div>
             <div class="modal-body">
-                <form id="editCategoryForm" enctype="multipart/form-data">
+                <form id="/admin/categories/update/editCategory" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="editCategoryID" class="form-label">Mã Danh Mục</label>
                         <input type="text" class="form-control" id="editCategoryID" name="categoryID" readonly>

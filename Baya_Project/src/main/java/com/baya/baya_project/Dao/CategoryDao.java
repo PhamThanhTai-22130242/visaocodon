@@ -65,7 +65,7 @@ public class CategoryDao implements DaoInterface<Category> {
     @Override
     public int delete(String id) {
         return jdbi.withHandle(handle ->
-                handle.createUpdate("DELETE FROM Category WHERE categoryID = ?")
+                handle.createUpdate("DELETE FROM category WHERE categoryID = ?")
                         .bind(0, id)
                         .execute()
         );

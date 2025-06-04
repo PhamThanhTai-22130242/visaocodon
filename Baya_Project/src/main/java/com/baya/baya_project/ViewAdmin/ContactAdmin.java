@@ -2,6 +2,7 @@ package com.baya.baya_project.ViewAdmin;
 
 import com.baya.baya_project.Dao.ContactDao;
 import com.baya.baya_project.Model.Contact;
+import com.baya.baya_project.Model.UserPrincipal;
 import com.baya.baya_project.service.ContactService;
 import com.baya.baya_project.service.LogService;
 import jakarta.servlet.ServletException;
@@ -38,19 +39,22 @@ public class ContactAdmin extends HttpServlet {
             throws ServletException, IOException {
         ContactService contactService = new ContactService();
         String action = request.getParameter("action");
+        HttpSession session = request.getSession();
+        UserPrincipal userPrincipal = (UserPrincipal) session.getAttribute("user");
 
+        int userID = userPrincipal.getUser().getUserID();
         if ("delete".equals(action)) {
             try {
                 int id = Integer.parseInt(request.getParameter("id"));
                 Contact contact = contactDao.selectById(id);
                 contactService.delete(id);
 
-                int userID = (int) request.getSession().getAttribute("userID");
+
                 logService.infor(userID, "Xóa phản hồi", "Thông tin trước khi xóa: " + contact.toString(), "Đã xóa phản hồi với ID: " + id);
 
                 request.setAttribute("message", "Xóa thông tin phản hồi thành công.");
             } catch (Exception e) {
-                int userID = (int) request.getSession().getAttribute("userID");
+
                 logService.warning(userID, "Lỗi khi xóa phản hồi", "", "Lỗi: " + e.getMessage());
 
                 request.setAttribute("message", "Đã xảy ra lỗi khi xóa thông tin phản hồi: " + e.getMessage());
