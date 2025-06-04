@@ -27,7 +27,6 @@ public class ConfirmChangePass extends HttpServlet {
            return;
         }
         try{
-
         String typeForget = request.getParameter("type");
         String password = request.getParameter("password");
         UserDAO dao = new UserDAO();
@@ -42,19 +41,13 @@ public class ConfirmChangePass extends HttpServlet {
 
         } else {
             if (dao.updatePassword(user.getEmail(), hashPasswords.hashPassword(password) ) > 0) {
-
                 message = "Thành công";
-
                 int type = 6;
                 request.setAttribute("type", type);
                 url ="/resultRegister.jsp";
-
-
             } else {
                 message = "Đã xảy ra lỗi";
-
                 url = "/ForgetPasswordC.jsp";
-
             }
         }
         request.setAttribute("message", message);
@@ -67,6 +60,6 @@ public class ConfirmChangePass extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 }

@@ -3,7 +3,7 @@ package com.baya.baya_project.config;
 public class Server {
     private String serverName;
     public Server() {
-        serverName = "http://localhost:8080";
+        serverName = "https://bayastore.id.vn";
     }
 
     public String getServerName() {

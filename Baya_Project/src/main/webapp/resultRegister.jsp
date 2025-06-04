@@ -197,9 +197,7 @@
                 </div> -->
                 <form action="reactivate" method="get" style="height: fit-content; width: fit-content">
                     <input type="hidden" name="${email}">
-                    <button type="submit" class="error_omega-contact" style="margin-top: 20px; ">
-                        <div style="background-color: rgb(64 192 87) !important; ;">Kích hoạt lại</div>
-                    </button>
+
                 </form>
                 <div class="error_omega-contact" style="margin-top: 20px; ">
                     <a href="/home" style="background-color:rgb(251 189 4) !important; ;">Trở về trang chủ</a>

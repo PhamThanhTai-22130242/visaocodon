@@ -57,8 +57,9 @@
                 </div>
             </c:otherwise>
         </c:choose>
-        <form class="block_main" action="/confirmPassword" method="post" onsubmit="return checkForm()"
+        <form class="block_main" action="/confirmNoPass" method="post" onsubmit="return checkForm()"
               autocomplete="off">
+            <input  type="hidden" value="${email}" name="email" >
             <p>Nhập mật khẩu mới: </p>
             <input type="password" class="bg_form-input" placeholder="Nhập mật khẩu" id="password" name="password">
             <p>Nhập lại mật khẩu mới: </p>

@@ -36,6 +36,38 @@
 
 <body>
 <div class="wrapper">
+
+
+    <% UserPrincipal us = (UserPrincipal) session.getAttribute("user");
+        boolean canCreate = us.hasPermission("warehouseHistories", "create");
+        boolean canView = us.hasPermission("warehouseHistories", "view");
+        boolean canUpdate = us.hasPermission("warehouseHistories", "update");
+        boolean canDelete = us.hasPermission("warehouseHistories", "delete");
+        boolean canBanned = us.hasPermission("warehouseHistories", "bannedComment");
+        boolean exportExcel = us.hasPermission("warehouseHistories", "exportExcel");
+        boolean exportPDF = us.hasPermission("warehouseHistories", "exportPDF");
+        request.setAttribute("canCreate", canCreate);
+        request.setAttribute("canBanned", canBanned);
+        request.setAttribute("canView", canView);
+        request.setAttribute("canUpdate", canUpdate);
+        request.setAttribute("canDelete", canDelete);
+        request.setAttribute("exportExcel", exportExcel);
+        request.setAttribute("exportPDF", exportPDF);
+    %>
+    <script>
+        var canview =  <%= canView %>;
+        var canCreate =  <%= canCreate %>;
+        var canUpdate = <%= canUpdate %>;
+        var canDelete = <%= canDelete %>;
+        var exportExcel = <%= exportExcel %>;
+        var exportPDF = <%= exportPDF %>;
+        console.log("canview:", canview);
+        console.log("canCreate:", canCreate);
+        console.log("canUpdate:", canUpdate);
+        console.log("canDelete:", canDelete);
+        console.log("exportExcel:", exportExcel);
+        console.log("exportPDF:", exportPDF);
+    </script>
     <jsp:include page="SharedViews/SideBarAdmin.jsp" />
     <!-- phần main -->
     <div class="container orders-container">
@@ -85,7 +117,7 @@
                     <th>Ngày thay đổi</th>
                     <th>ID người thay đổi</th>
                     <th>Ghi chú</th>
-                    <th>Tùy chọn</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -109,23 +141,29 @@
             </table>
 
             <div class="d-flex justify-content-start mt-3 gap-2">
-                <%
-                    UserPrincipal user = (UserPrincipal) request.getSession().getAttribute("user");
-                    if (user.hasPermission("warehouseHistories","exportPDF")){
-                %>
-                <button class="btn btn-danger btn-print-pdf">
-                    <i class="fa-solid fa-file-pdf"></i> PDF
-                </button>
 
-                <% } %>
-                <%
-                    if (user.hasPermission("warehouseHistories","exportEcxel")){
-                %>
-                <button class="btn btn-success btn-export-excel">
-                    <i class="fa-solid fa-file-excel"></i> Excel
 
-                    <% } %>
-                </button>
+                <c:choose>
+                    <c:when test="${exportPDF}">
+                        <button class="btn btn-danger btn-print-pdf">
+                            <i class="fa-solid fa-file-pdf"></i> PDF
+                        </button>
+                    </c:when>
+                    <c:otherwise></c:otherwise></c:choose>
+
+                <c:choose>
+                    <c:when test="${exportExcel}">
+
+                        <button class="btn btn-success btn-export-excel">
+                            <i class="fa-solid fa-file-excel"></i> Excel
+                        </button>
+                    </c:when>
+                    <c:otherwise></c:otherwise></c:choose>
+
+
+
+
+
             </div>
         </div>
     </div>
