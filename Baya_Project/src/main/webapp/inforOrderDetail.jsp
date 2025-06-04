@@ -64,7 +64,7 @@
                 <span>Đã hủy</span></div>
             <div class="status-step ">
                 <div class="status-circle ${requestScope.order.orderStatusID == 5 ? 'status-active' : ''}"></div>
-                <span>Hoàn tr</span></div>
+                <span>Hoàn trả</span></div>
         </div>
     </div>
     <c:forEach var="oi" items="${requestScope.order.items}">

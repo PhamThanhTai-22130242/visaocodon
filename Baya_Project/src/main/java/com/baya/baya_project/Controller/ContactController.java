@@ -18,24 +18,24 @@ import java.io.IOException;
 public class ContactController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        User user = (User) request.getSession().getAttribute("user");
-//
-//        if(user == null) {
-//            response.sendRedirect("login");
-//            return;
-//        }
+        User user = (User) request.getSession().getAttribute("user");
+
+        if(user == null) {
+            response.sendRedirect("login");
+            return;
+        }
         request.getRequestDispatcher("contact.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        User user = (User) request.getSession().getAttribute("user");
-//
-//
-//        if(user == null) {
-//            response.sendRedirect("login");
-//            return;
-//        }
+        User user = (User) request.getSession().getAttribute("user");
+
+
+        if(user == null) {
+            response.sendRedirect("login");
+            return;
+        }
         JSONObject jsonResponse = new JSONObject();
 
         LogService logService = new LogService();
@@ -48,12 +48,11 @@ public class ContactController extends HttpServlet {
         String fullname = request.getParameter("fullname_contact");
         String content = request.getParameter("content_contact");
 
-        UserPrincipal user= (UserPrincipal) request.getSession().getAttribute("user");
-        int userID = user.getUser().getUserID();
+        int userID = user.getUserID();
 
         ContactService  service = new ContactService();
         boolean isSuccess = service.insertContact(new Contact(fullname,Long.valueOf(phone),
-                email,content,30));
+                email,content,userID));
         if(isSuccess) {
             afterData ="phản hồi thành công với nội dung "+ content;
             jsonResponse.put("success",true);
@@ -61,7 +60,7 @@ public class ContactController extends HttpServlet {
             afterData ="bình luận thất bại";
             jsonResponse.put("success",false);
         }
-        logService.alert(30 ,location,beforeData,afterData);
+        logService.alert(userID ,location,beforeData,afterData);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write(jsonResponse.toString());

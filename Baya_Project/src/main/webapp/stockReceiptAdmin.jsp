@@ -63,9 +63,8 @@
             <thead>
             <tr>
                 <th style="width: 10%;">Mã phiếu</th>
-                <th style="width: 10%;">Loại phiếu</th>
                 <th style="width: 10%">Ngày tạo</th>
-                <th style="width: 60%;">Mô tả</th>
+                <th style="width: 40%;">Mô tả</th>
                 <th style="width: 10%;">Chức năng</th>
 
             </tr>
@@ -161,7 +160,6 @@
             "ajax": "/load-receipt-stock?action=all",
             "columns": [
                 { "data": "id" },
-                { "data": "receipt_type" },
                 { "data": "receipt_date" },
                 { "data": "note" },
                 {

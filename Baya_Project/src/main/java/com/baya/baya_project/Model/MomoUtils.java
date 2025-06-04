@@ -4,8 +4,8 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 public class MomoUtils {
-    public static final String REDIRECT_URL = "http://localhost:8080/status-momo";
-    public static final String IPN_URL = "http://localhost:8080/";
+    public static final String REDIRECT_URL = "https://bayastore.id.vn/status-momo";
+    public static final String IPN_URL = "https://bayastore.id.vn";
 
     public static String hmacSHA256(String data, String key) {
         try {

@@ -70,9 +70,8 @@
             <thead>
             <tr>
                 <th style="width: 10%;">Mã phiếu</th>
-                <th style="width: 10%;">Loại phiếu</th>
                 <th style="width: 10%">Ngày tạo</th>
-                <th style="width: 60%;">Mô tả</th>
+                <th style="width: 40%;">Mô tả</th>
                 <th style="width: 10%;">Chức năng</th>
 
             </tr>
@@ -175,7 +174,6 @@
             "ajax": "/load-issue-stock?action=all",
             "columns": [
                 {"data": "id"},
-                {"data": "issue_type"},
                 {"data": "issue_date"},
                 {"data": "note"},
                 {

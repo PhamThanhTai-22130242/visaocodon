@@ -140,7 +140,7 @@
             })
             .then(data => {
              if(data.success){
-                 notyf.error('Phản hồi thành công')
+                 notyf.success('Phản hồi thành công')
              }else{
                  notyf.error('Phản hồi thất bại')
              }

@@ -56,7 +56,11 @@ public class MethodPaymentController extends HttpServlet {
             Order order =service.insertOrder((User) session.getAttribute("user"), (Cart)session.getAttribute("cart"),name,email,phone,address,note,method);
             afterData = "mua thành công với mã đơn hàng "+order.getOrderId();
             logService.infor(user.getUserID(),location,beforeData,afterData);
+
+            MailService mailService = new MailService();
+            mailService.sendMailTo(email, "Thông tin đơn hàng", order);
             response.sendRedirect("inforOrder.jsp");
+
         } else  {
             response.sendRedirect(request.getContextPath() + "/payment-vnpay");
         }

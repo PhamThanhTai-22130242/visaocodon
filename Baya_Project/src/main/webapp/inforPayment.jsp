@@ -684,7 +684,6 @@
         const weight = 25000;
 
         if (!toDistrictID || !toWardID || !weight) {
-            alert('Vui lòng nhập đầy đủ thông tin!');
             return;
         }
 
@@ -767,6 +766,8 @@
                     $('#discount_shipping').text(new Intl.NumberFormat('vi-VN').format(0) + " đ");
 
                     checkChooseLocation = true
+                    $('#address-display').val('');
+
                 }
 
             })
@@ -863,10 +864,11 @@
                     marker = L.marker([lat, lng]).addTo(map);
 
                     try {
-                        const url = 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=' + lat + '&lon=' + lng;
+                        const url = 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=' + lat + '&lon=' + lng + '&accept-language=vi';
                         const res = await fetch(url);
                         const data = await res.json();
                         address = data.display_name || "Không tìm thấy địa chỉ";
+
 
                         $('#map-address-info').html('<b>Địa chỉ gần nhất:</b> ' + address);
                     } catch (error) {
@@ -882,9 +884,14 @@
 
             $('#confirmLocationBtn').on('click',function(){
 
-                const province = $('#province option:selected').text().trim();
-                const district = $('#district option:selected').text().trim();
-                const ward = $('#ward option:selected').text().trim();
+                const province = $('#province option:selected').text()
+                const district = $('#district option:selected').text()
+                const ward = $('#ward option:selected').text()
+
+
+                    console.log('Address :'+ address);
+                console.log('Location :'+ province+" "+district+" "+ward);
+                console.log(address.includes(province))
 
                 if (address.includes(province) && address.includes(district) && address.includes(ward)) {
                     $('#address-display').val(address);
@@ -902,7 +909,6 @@
                 const res = await fetch(url);
                 const data = await res.json();
                 if (data.length === 0) {
-                    alert("Không tìm thấy địa chỉ: " + address);
                 } else {
                     const lat = parseFloat(data[0].lat);
                     const lon = parseFloat(data[0].lon);
@@ -914,7 +920,6 @@
                     $('#map-address-info').text('📍 ' + address);
                 }
             } catch (error) {
-                alert("Lỗi khi tìm địa chỉ: " + address);
             }
         }
 
@@ -934,7 +939,6 @@
                 console.log("Địa chỉ lấy được:", address);
             } catch (error) {
                 console.error("Lỗi reverseGeocode:", error);
-                alert("Lỗi khi lấy địa chỉ từ tọa độ");
             }
         }
 
